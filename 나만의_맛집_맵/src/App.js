@@ -1,10 +1,10 @@
-import Map from './components/Map.js';
+import MapPage from './components/MapPage';
 
 
 const App = () => {
   return (
     <>
-      <Map/>
+      <MapPage/>
     </>
   )
 }

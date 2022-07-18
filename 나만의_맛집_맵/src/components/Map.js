@@ -3,13 +3,13 @@ import React, { useEffect } from 'react';
 
 const { kakao } = window;
 
-const Map = (geo) => {
+const Map = ({getGeo, geo}) => {
 
   //처음 지도 그리기
   useEffect(() => {
     const container = document.getElementById('map');
     const mapOptions = {
-      center: new kakao.maps.LatLng(...geo),  //  geo.lat, geo.lng 형식으로 할까?
+      center: new kakao.maps.LatLng(37.443014, 126.708708),  //  geo.lat, geo.lng 형식으로 할까?
       level: 3,
     };
     //  지도 생성
@@ -50,13 +50,13 @@ const Map = (geo) => {
 
     // 인포윈도우를 닫는 클로저를 만드는 함수입니다 
     function makeOutListener(infowindow) {
-      return function() {
+      return function () {
         infowindow.close();
       };
     }
 
     //  position의 길이만큼 마커를 생성
-    for (let i = 0; i < position.length; i++){
+    for (let i = 0; i < position.length; i++) {
       const markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize);
 
       const marker = new kakao.maps.Marker({
@@ -67,10 +67,10 @@ const Map = (geo) => {
       });
 
       // 마커에 클릭이벤트를 등록합니다
-      kakao.maps.event.addListener(marker, 'click', function() {
+      kakao.maps.event.addListener(marker, 'click', function () {
         console.log(`click event test`);
         position[i].show = true;  //  show 요소의 불리언으로 유효성 검사를 거친뒤 상세정보 블럭의 상태를 나타내고 없앤다.
-        console.log(position[i].show); 
+        console.log(position[i].show);
       });
 
       const infowindow = new kakao.maps.InfoWindow({
@@ -87,7 +87,10 @@ const Map = (geo) => {
   }, [])
 
   return (
-    <div id="map"></div>
+    <>
+      <div id="map"></div>
+      {/* <button onClick={ getGeo }>현제 위치로 이동</button> */}
+    </>
   );
 };
 

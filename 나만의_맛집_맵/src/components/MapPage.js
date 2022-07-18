@@ -10,11 +10,15 @@ const MapBlock = styled.div`
   }
   width: 100%;
 `;
+const test = () => {
+  console.log('button test');
+}
 
 const MapPage = () => {
   return (
     <MapBlock>
-      <Map/>
+      <Map />
+      <button onClick={test}>현제 위치로 이동</button>
     </MapBlock>
   )
 }

@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-import markers from './mapMarkers';
+import getgeo from './getCurrentGeo';
 
 const rootReducer = combineReducers({
-  markers
+  getgeo
 });
 
 export default rootReducer;

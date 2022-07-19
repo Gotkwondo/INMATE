@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-import getgeo from './getCurrentGeo';
+import currentgeo from './currentgeo';
 
 const rootReducer = combineReducers({
-  getgeo
+  currentgeo
 });
 
 export default rootReducer;

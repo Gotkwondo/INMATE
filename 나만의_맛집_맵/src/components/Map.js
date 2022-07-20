@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 
 const { kakao } = window;
 
-const Map = ({getGeo, geo}) => {
+const Map = ({geo}) => {
 
   //처음 지도 그리기
   useEffect(() => {

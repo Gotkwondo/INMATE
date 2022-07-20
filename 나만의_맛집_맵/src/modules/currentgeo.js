@@ -1,13 +1,18 @@
 import { handleActions } from 'redux-actions';
 
+let currentLat = 0;
+let currentLng = 0;
+
 const onGeoOk = (position) => {
-  const currentLat = position.coords.latitude;
-  const currentLng = position.coords.longitude;
-  return { currentLat, currentLng };  //  이게 반환됨
-}
+  currentLat = position.coords.latitude;
+  currentLng = position.coords.longitude;
+};
 const onGeoError = () => {
   alert("위치권한을 다시 확인해주세요ㅠㅠ");
-}
+};
+
+//useEffect로 navigator.geolocation.getCurrentPosition(onGeoOk, onGeoError)
+//위의 동작을 처리해야 하나? 일단 밥부터
 
 const GET_GEO = 'currentgeo/GET_GEO';
 const GET_GEO_SUCCESS = 'currentgeo/GET_GEO_SUCCESS';
@@ -16,10 +21,11 @@ const GET_GEO_FAILURE = 'currentgeo/GET_GEO_FAILURE';
 export const getGeo = () => dispatch => {
   dispatch({ type: GET_GEO });
   try {
-    const response = navigator.geolocation.getCurrentPosition(onGeoOk, onGeoError);
+    navigator.geolocation.getCurrentPosition(onGeoOk, onGeoError);
+    console.log(currentLat);
     dispatch({
       type: GET_GEO_SUCCESS,
-      payload: response
+      payload: {lat: currentLat, lng: currentLng}
     }); //  요청 성공
   }
   catch (e) {
@@ -33,8 +39,10 @@ export const getGeo = () => dispatch => {
 };
 
 const initialState = {
-  lat: 37.443014,
-  lng: 126.708708
+  geo: {
+    lat: 37.443014,
+    lng: 126.708708
+  }
 };
 
 const currentgeo = handleActions(
@@ -44,8 +52,7 @@ const currentgeo = handleActions(
     }),
     [GET_GEO_SUCCESS]: (state, action) => ({
       ...state,
-      lat: action.payload.currentLat,
-      lng: action.payload.currentLng
+      geo: action.payload
     }),
     [GET_GEO_FAILURE]: state => ({
       ...state

@@ -3,13 +3,12 @@ import React, { useEffect } from 'react';
 
 const { kakao } = window;
 
-const Map = ({geo}) => {
-
-  //처음 지도 그리기
+const Map = ({ geo, getGeo }) => {
+  //처음 지도 그리기  
   useEffect(() => {
     const container = document.getElementById('map');
     const mapOptions = {
-      center: new kakao.maps.LatLng(37.443014, 126.708708),  //  geo.lat, geo.lng 형식으로 할까?
+      center: new kakao.maps.LatLng(geo.lat, geo.lng),  //  geo.lat, geo.lng 형식으로 할까?
       level: 3,
     };
     //  지도 생성
@@ -80,16 +79,17 @@ const Map = ({geo}) => {
       //  마우스를 마커에 호버시 영업점 이름을 infowindow에 표시
       kakao.maps.event.addListener(marker, 'mouseover', makeOverListener(kakaoMap, marker, infowindow));
       kakao.maps.event.addListener(marker, 'mouseout', makeOutListener(infowindow));
-
+      
       //  지도위에 마커 생성
       marker.setMap(kakaoMap);
+      
+      // dispatcher(action)
     };
-  }, [])
-
+  }, []);
   return (
     <>
       <div id="map"></div>
-      {/* <button onClick={ getGeo }>현제 위치로 이동</button> */}
+      <button onClick={getGeo}>현제 위치로 이동</button>
     </>
   );
 };

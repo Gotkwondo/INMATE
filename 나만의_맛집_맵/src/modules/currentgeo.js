@@ -22,7 +22,7 @@ export const getGeo = () => dispatch => {
   dispatch({ type: GET_GEO });
   try {
     navigator.geolocation.getCurrentPosition(onGeoOk, onGeoError);
-    console.log(currentLat);
+    console.log(currentLat, currentLng);
     dispatch({
       type: GET_GEO_SUCCESS,
       payload: {lat: currentLat, lng: currentLng}

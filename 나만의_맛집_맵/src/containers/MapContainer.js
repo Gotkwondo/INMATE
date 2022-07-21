@@ -1,17 +1,16 @@
 import { connect } from 'react-redux';
-import MapPage from '../components/MapPage';
 import { getGeo } from '../modules/currentgeo';
 import styled from 'styled-components';
 import Map from '../components/Map'
 
 const MapBlock = styled.div`
   display: flex;
+  width: 100%;
   #map {
     display: block;
-    width: 100%;
+    width: 80vw;
     height: 100vh;
   }
-  width: 100%;
 `;
 
 const MapContainer = ({
@@ -20,15 +19,14 @@ const MapContainer = ({
 }) => {
   return (
     <MapBlock>
-      <Map geo={geo}/>
-      <button onClick={getGeo}>현제 위치로 이동</button>
+      <Map geo={geo} getGeo={getGeo}/>
     </MapBlock>
   )
 }
 
 export default connect(
   ({ currentgeo }) => ({
-    geo: currentgeo.currentgeo
+    geo: currentgeo.geo
   }),
   {
     getGeo

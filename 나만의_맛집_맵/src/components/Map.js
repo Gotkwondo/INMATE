@@ -3,16 +3,39 @@ import React, { useEffect } from 'react';
 
 const { kakao } = window;
 
-const Map = ({ geo, getGeo }) => {
+const Map = () => {
   //처음 지도 그리기  
   useEffect(() => {
+
     const container = document.getElementById('map');
     const mapOptions = {
-      center: new kakao.maps.LatLng(geo.lat, geo.lng),  //  geo.lat, geo.lng 형식으로 할까?
+      //  geolocation이 작동하지 않을때 표시할 중심 좌표
+      center: new kakao.maps.LatLng(37.443014, 126.708708),  //  geo.lat, geo.lng 형식으로 할까?
       level: 3,
     };
     //  지도 생성
     const kakaoMap = new kakao.maps.Map(container, mapOptions);
+
+    //  현제 위치 렌더링에 필요한 좌표
+    
+    if (navigator.geolocation) {
+      const onGeoOk = (position) => {
+        const currentLat = position.coords.latitude;
+        const currentLng = position.coords.longitude;
+        
+        //  마커 표시 좌표와 표시할 메시지
+        const locPosition = new kakao.maps.LatLng(currentLat, currentLng);
+        const message = `<div>현재 위치</div>`;
+        
+        kakaoMap.setCenter(locPosition);
+      };
+      const onGeoError = () => {
+        alert("위치권한을 다시 확인해주세요ㅠㅠ");
+      };
+      navigator.geolocation.getCurrentPosition(onGeoOk, onGeoError);
+    };
+
+    
 
     //  지도상에 표시할 가게들의 정보
     const position = [
@@ -40,23 +63,27 @@ const Map = ({ geo, getGeo }) => {
     const imageSrc = "https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png" // 마커이미지의 주소입니다
     const imageSize = new kakao.maps.Size(24, 35);
 
-    // 인포윈도우를 표시하는 클로저를 만드는 함수입니다 
-    function makeOverListener(map, marker, infowindow) {
-      return function () {
-        infowindow.open(map, marker);
-      };
-    };
-
-    // 인포윈도우를 닫는 클로저를 만드는 함수입니다 
-    function makeOutListener(infowindow) {
-      return function () {
-        infowindow.close();
-      };
-    }
 
     //  position의 길이만큼 마커를 생성
     for (let i = 0; i < position.length; i++) {
       const markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize);
+      //  오버레이 레이아웃
+      const content = `<div class="wrap">` +
+                      `    <div class="info">` + 
+                      `        <div class="title">` + 
+                      `            ${position[i].name}` + 
+                      `            <div class="close" onclick="closeOverlay()" title="닫기"></div>` + 
+                      `        </div>` + 
+                      `        <div class="body">` + 
+                      `            <div class="img">` +
+                      `                <img src="" width="73" height="70">` +
+                      `           </div>` + 
+                      `            <div class="desc">` + 
+                      `                <div class="ellipsis">제주특별자치도 제주시 첨단로 242</div>` + 
+                      `            </div>` + 
+                      `        </div>` + 
+                      `    </div>` +    
+                      `</div>`;
 
       const marker = new kakao.maps.Marker({
         map: kakaoMap,
@@ -65,31 +92,29 @@ const Map = ({ geo, getGeo }) => {
         image: markerImage
       });
 
-      // 마커에 클릭이벤트를 등록합니다
-      kakao.maps.event.addListener(marker, 'click', function () {
-        console.log(`click event test`);
-        position[i].show = true;  //  show 요소의 불리언으로 유효성 검사를 거친뒤 상세정보 블럭의 상태를 나타내고 없앤다.
-        console.log(position[i].show);
+      let customOverlay = new kakao.maps.CustomOverlay({
+        position: position[i].latlng,
+        content: content,
       });
 
-      const infowindow = new kakao.maps.InfoWindow({
-        content: position[i].name //  인포윈도우에 해당 가게 이름 표시
+      kakao.maps.event.addListener(marker, 'mouseover', () => {
+        customOverlay.setMap(kakaoMap);
       });
 
-      //  마우스를 마커에 호버시 영업점 이름을 infowindow에 표시
-      kakao.maps.event.addListener(marker, 'mouseover', makeOverListener(kakaoMap, marker, infowindow));
-      kakao.maps.event.addListener(marker, 'mouseout', makeOutListener(infowindow));
+      kakao.maps.event.addListener(marker, 'mouseout', () => {
+        setTimeout(() => {
+          customOverlay.setMap();
+        }, 100);
+      });
       
       //  지도위에 마커 생성
       marker.setMap(kakaoMap);
-      
-      // dispatcher(action)
     };
+    
   }, []);
   return (
     <>
       <div id="map"></div>
-      <button onClick={getGeo}>현제 위치로 이동</button>
     </>
   );
 };

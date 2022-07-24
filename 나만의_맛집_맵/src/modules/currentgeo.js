@@ -38,12 +38,26 @@ export const getGeo = () => dispatch => {
   }
 };
 
-const initialState = {
-  geo: {
-    lat: 37.443014,
-    lng: 126.708708
-  }
-};
+const initialState = [
+  {
+    latlng: new kakao.maps.LatLng(37.443014, 126.708708),
+    name: '요리야 김밥',
+    id: 1,
+    show: false
+  },
+  {
+    latlng: new kakao.maps.LatLng(37.442971, 126.708892),
+    name: '서오릉 피자',
+    id: 2,
+    show: false
+  },
+  {
+    latlng: new kakao.maps.LatLng(37.413328, 126.678618),
+    name: '그시절 동태탕',
+    id: 3,
+    show: false
+  },
+];
 
 const currentgeo = handleActions(
   {

@@ -1,41 +1,31 @@
 import { handleActions } from 'redux-actions';
 
-let currentLat = 0;
-let currentLng = 0;
 
-const onGeoOk = (position) => {
-  currentLat = position.coords.latitude;
-  currentLng = position.coords.longitude;
-};
-const onGeoError = () => {
-  alert("위치권한을 다시 확인해주세요ㅠㅠ");
-};
+const INSERT_INFO = 'currentgeo/INSERT_INFO';
+// const GET_GEO_SUCCESS = 'currentgeo/GET_GEO_SUCCESS';
+// const GET_GEO_FAILURE = 'currentgeo/GET_GEO_FAILURE';
 
-//useEffect로 navigator.geolocation.getCurrentPosition(onGeoOk, onGeoError)
-//위의 동작을 처리해야 하나? 일단 밥부터
-
-const GET_GEO = 'currentgeo/GET_GEO';
-const GET_GEO_SUCCESS = 'currentgeo/GET_GEO_SUCCESS';
-const GET_GEO_FAILURE = 'currentgeo/GET_GEO_FAILURE';
-
-export const getGeo = () => dispatch => {
-  dispatch({ type: GET_GEO });
-  try {
-    navigator.geolocation.getCurrentPosition(onGeoOk, onGeoError);
-    console.log(currentLat, currentLng);
-    dispatch({
-      type: GET_GEO_SUCCESS,
-      payload: {lat: currentLat, lng: currentLng}
-    }); //  요청 성공
-  }
-  catch (e) {
-    dispatch({
-      type: GET_GEO_FAILURE,
-      payload: e,
-      error: true
-    }); //  에러 발생
-    throw e;
-  }
+export const insertInfo = () => dispatch => {
+  dispatch({
+    type: CHANGE_INPUT,
+    payload: input
+  });
+  // try {
+  //   navigator.geolocation.getCurrentPosition(onGeoOk, onGeoError);
+  //   console.log(currentLat, currentLng);
+  //   // dispatch({
+  //   //   type: GET_GEO_SUCCESS,
+  //   //   payload: {lat: currentLat, lng: currentLng}
+  //   // }); //  요청 성공
+  // }
+  // catch (e) {
+  //   dispatch({
+  //     type: GET_GEO_FAILURE,
+  //     payload: e,
+  //     error: true
+  //   }); //  에러 발생
+  //   throw e;
+  // }
 };
 
 const initialState = [

@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import Map from '../components/Map'
 
 const MapBlock = styled.div`
-  display: flex;
+  display: inline-block;
   width: 100%;
   heigth: 50vh;
   #map {
@@ -26,20 +26,7 @@ const MapBlock = styled.div`
     .info:after {content: '';position: absolute;margin-left: -12px;left: 50%;bottom: 0;width: 22px;height: 12px;background: url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/vertex_white.png')}
   }
 `;
-
-
-
-const ListItem = ({list}) => {
-  return (
-    <div>
-      <span>{list.id}</span>
-      <span>{list.name}</span>
-    </div>
-  );
-};
-
-const MapContainer = () => {
-  const testArr = [
+const testArr = [
   {
     // latlng: new kakao.maps.LatLng(37.443014, 126.708708),
     name: '요리야 김밥',
@@ -59,10 +46,21 @@ const MapContainer = () => {
     show: false
   },
 ];
+
+
+const ListItem = ({list}) => {
   return (
     <div>
-      <div>dddddddddddddd</div>
-      <div className="list">
+      <span>{list.id}</span>
+      <span>{list.name}</span>
+    </div>
+  );
+};
+
+const MapContainer = () => {
+  return (
+    <div className="wrapping">
+      <div className="left">
         {testArr.map(list => (
           <ListItem
             list={list}
@@ -70,9 +68,12 @@ const MapContainer = () => {
           />
         ))}
       </div>
-      {/* <MapBlock>
-        <Map/>
-      </MapBlock> */}
+      <div className="right">
+        <MapBlock>
+          <Map />
+        </MapBlock>
+      </div>
+      
     </div>
   )
 }

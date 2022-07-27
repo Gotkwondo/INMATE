@@ -27,12 +27,52 @@ const MapBlock = styled.div`
   }
 `;
 
-const MapContainer = () => {
+
+
+const ListItem = ({list}) => {
   return (
     <div>
-      <MapBlock>
+      <span>{list.id}</span>
+      <span>{list.name}</span>
+    </div>
+  );
+};
+
+const MapContainer = () => {
+  const testArr = [
+  {
+    // latlng: new kakao.maps.LatLng(37.443014, 126.708708),
+    name: '요리야 김밥',
+    id: 1,
+    show: false
+  },
+  {
+    // latlng: new kakao.maps.LatLng(37.442971, 126.708892),
+    name: '서오릉 피자',
+    id: 2,
+    show: false
+  },
+  {
+    // latlng: new kakao.maps.LatLng(37.413328, 126.678618),
+    name: '그시절 동태탕',
+    id: 3,
+    show: false
+  },
+];
+  return (
+    <div>
+      <div>dddddddddddddd</div>
+      <div className="list">
+        {testArr.map(list => (
+          <ListItem
+            list={list}
+            key={list.id}
+          />
+        ))}
+      </div>
+      {/* <MapBlock>
         <Map/>
-      </MapBlock>
+      </MapBlock> */}
     </div>
   )
 }

@@ -1,14 +1,14 @@
 import { connect } from 'react-redux';
 import { getGeo } from '../modules/currentgeo';
 import Map from '../components/Map'
-import List from '../components/List';
+import ListCategories from '../components/ListCategories';
 import './mapContainer.scss';
 
 const MapContainer = () => {
   return (
     <div className="middle-wrapping">
       <div className="left">
-        <List/>
+        <ListCategories/>
       </div>
       <div className="right">
         <div className="map-block">

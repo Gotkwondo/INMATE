@@ -1,5 +1,5 @@
 body{
-  background: rgb(192, 240, 237);
+  background: rgb(230, 248, 247);
 }
 .middle-wrapping{
   width: 100%;
@@ -7,20 +7,27 @@ body{
   display:flex;
   // background: rgb(144, 240, 227);
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
   padding-top: 50px;
   padding-bottom: 50px;
   .left{
-    padding-right: 25px;
-    padding-left: 25px;
-    height: 100%;
-    width: 15%;
+    height: 80vh;
+    width: 20%;
     background: white;
-    border-right: 5px solid gray;
+    border-right: 5px solid rgb(0, 255, 221);
     border-radius: 10px;
+    ul{
+    padding-left: 0px;
+    margin: 0 0 0 0px;
+    list-style: none;
+    .name{
+      font-size: 15px;
+    }
+  }
   }
   .right{
     width: 70%;
+    height: 100%;
   }
 }
 .map-block{
@@ -31,10 +38,10 @@ body{
     display: inline-block;
     width: 100%;
     height: 80vh;
-    border-radius: 30px;
-    .wrap {position: absolute;left: 0;bottom: 35px;width: 288px;height: 132px;margin-left: -140px;text-align: left;overflow: hidden;font-size: 12px;font-family: 'Malgun Gothic', dotum, '돋움', sans-serif;line-height: 1.5;}
+    border-radius: 20px;
+    .wrap {position: absolute;left: 0;bottom: 35px;width: 388px;height: 132px;margin-left: -190px;text-align: center;overflow: hidden;font-size: 15px;font-family: 'Malgun Gothic', dotum, '돋움', sans-serif;line-height: 1.5;}
     .wrap * {padding: 0;margin: 0;}
-    .wrap .info {width: 286px;height: 120px;border-radius: 5px;border-bottom: 2px solid #ccc;border-right: 1px solid #ccc;overflow: hidden;background: #fff;}
+    .wrap .info {width: 386px;height: 120px;border-radius: 5px;border-bottom: 2px solid #ccc;border-right: 1px solid #ccc;overflow: hidden;background: #fff;}
     .wrap .info:nth-child(1) {border: 0;box-shadow: 0px 1px 2px #888;}
     .info .title {padding: 5px 0 0 10px;height: 30px;background: #eee;border-bottom: 1px solid #ddd;font-size: 18px;font-weight: bold;}
     .info .close {position: absolute;top: 10px;right: 10px;color: #888;width: 17px;height: 17px;background: url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/overlay_close.png');}

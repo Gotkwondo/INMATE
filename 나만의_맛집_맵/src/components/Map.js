@@ -42,22 +42,25 @@ const Map = () => {
       {
         latlng: new kakao.maps.LatLng(37.443014, 126.708708),
         name: '요리야 김밥',
+        adress: "인천시 남동구 인하로 559",
         id: 1,
         show: false
       },
       {
         latlng: new kakao.maps.LatLng(37.442971, 126.708892),
         name: '서오릉 피자',
+        adress: "인천시 남동구 인하로 559",
         id: 2,
         show: false
       },
       {
         latlng: new kakao.maps.LatLng(37.413328, 126.678618),
-        name: '그시절 동태탕',
+        name: '그 시절 동태촌',
+        adress: "인천시 연수구 샘말로 37-8",
         id: 3,
         show: false
       },
-    ]
+    ];
 
     //  마커에 사용될 이미지와 그 이미지의 사이즈 선언
     const imageSrc = "https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png" // 마커이미지의 주소입니다
@@ -72,14 +75,13 @@ const Map = () => {
                       `    <div class="info">` + 
                       `        <div class="title">` + 
                       `            ${position[i].name}` + 
-                      `            <div class="close" onclick="closeOverlay()" title="닫기"></div>` + 
                       `        </div>` + 
                       `        <div class="body">` + 
                       `            <div class="img">` +
                       `                <img src="" width="73" height="70">` +
                       `           </div>` + 
                       `            <div class="desc">` + 
-                      `                <div class="ellipsis">제주특별자치도 제주시 첨단로 242</div>` + 
+                      `                <div class="ellipsis">주소 : ${position[i].adress}</div>` + 
                       `            </div>` + 
                       `        </div>` + 
                       `    </div>` +    

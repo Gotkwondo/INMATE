@@ -1,7 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+
 .hd-wrapper{
   display: flex;
-  position: relative;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background: rgb(230, 248, 247);
   align-items: center;
-  justify-content: center;
-  margin: auto;
+  justify-content: space-between;
+  padding: 15px;
+  .title{
+    font-size: 30px;
+    font-family: 'Noto Sans', cursive;
+  }
+  .img-wrapper{
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    a{
+      height: 30px;
+      width: 30px;
+      img{
+        width: 30px;
+        height: 30px;
+      }
+    }
+  }
 }

@@ -7,6 +7,20 @@ const App = () => {
     <>
       <Title/>
       <MapContainer />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      
+      <br />
+      <br/>
+      <br/>
+
     </>
   )
 }

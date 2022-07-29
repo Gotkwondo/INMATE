@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import { getGeo } from '../modules/currentgeo';
 import Map from '../components/Map'
 import ListCategories from '../components/ListCategories';
-import './mapContainer.scss';
+import '../styles/mapContainer.scss';
 
 const MapContainer = () => {
   return (

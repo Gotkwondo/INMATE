@@ -28,11 +28,10 @@ const testArr = [
 const ListItem = ({list}) => {
   return (
     <li>
-      <span>{list.id}</span>
+      {/* <span>{list.id}</span> */}
       <span className='name'>{list.name}</span>
       <br/>
       <span className='kind'>{list.kind}</span>
-      <hr />
     </li>
   );
 };

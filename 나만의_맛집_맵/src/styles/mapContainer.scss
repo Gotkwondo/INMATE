@@ -8,23 +8,31 @@ body{
   // background: rgb(144, 240, 227);
   align-items: center;
   justify-content: center;
-  padding-top: 50px;
-  padding-bottom: 50px;
+  padding: 15px 0px 15px 0px;
+  
+  //  left css
   .left{
     height: 80vh;
     width: 20%;
-    background: white;
-    border-right: 5px solid rgb(0, 255, 221);
-    border-radius: 10px;
+    background: rgb(255, 255, 255);
+    border-right: 5px solid rgb(34, 252, 179);
+    // border-radius: 10px;
     ul{
-    padding-left: 0px;
-    margin: 0 0 0 0px;
-    list-style: none;
-    .name{
-      font-size: 15px;
+      display: block;
+      padding-left: 0px;
+      margin: 0 0 0 0px;
+      list-style: none;
+      li{
+        border-bottom: 2px solid rgb(165, 165, 165);;
+        padding: 5px;
+      }
+      .name{
+        font-size: 15px;
+      }
     }
   }
-  }
+
+  //  right css
   .right{
     width: 70%;
     height: 100%;

@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { getGeo } from '../modules/currentgeo';
+import changeCenter from '../modules/currentgeo'
 import Map from '../components/Map'
 import ListCategories from '../components/ListCategories';
 import '../styles/mapContainer.scss';
@@ -21,10 +21,12 @@ const MapContainer = () => {
 
 //  이후 맛집 리스트를 연결할 때 사용
 export default connect(
-  ({ currentgeo }) => ({
-    geo: currentgeo.geo
+  ({ state }) => ({
+    info: state.info,
+    centerLoca: state.centerLoca
   }),
   {
-    getGeo
+    //  액션 함수를 작성
+    changeCenter
   }
 )(MapContainer);

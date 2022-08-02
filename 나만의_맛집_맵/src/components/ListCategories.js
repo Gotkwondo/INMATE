@@ -25,28 +25,29 @@ const testArr = [
   },
 ];
 
-const ListItem = ({list}) => {
+const ListItem = ({ list, onSelectLocation }) => {
   return (
-    <li>
-      {/* <span>{list.id}</span> */}
+    <li onClick={onSelectLocation(list.id)}>
       <span className='name'>{list.name}</span>
-      <br/>
+      <br />
       <span className='kind'>{list.kind}</span>
     </li>
   );
 };
 
-const ListCategories = () => {
+
+const ListCategories = ({ onSelectLocation }) => {
   return (
     <ul>
       {testArr.map(list => (
         <ListItem
+          onSelectLocation={onSelectLocation}
           list={list}
           key={list.id}
         />
       ))}
     </ul>
-  )
-}
+  );
+};
 
 export default ListCategories;

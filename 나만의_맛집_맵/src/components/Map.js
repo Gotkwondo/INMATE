@@ -34,7 +34,10 @@ const Map = () => {
       };
       navigator.geolocation.getCurrentPosition(onGeoOk, onGeoError);
     };
-
+    const selectLocation = 0;
+    if (selectLocation) {
+      
+    }
     
 
     //  지도상에 표시할 가게들의 정보

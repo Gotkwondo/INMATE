@@ -8,10 +8,20 @@
   background: rgb(250, 255, 255);
   align-items: center;
   justify-content: space-between;
-  padding: 15px;
+  padding: 0px 15px 0px 15px;
   .title{
     font-size: 30px;
     font-family: 'Noto Sans', cursive;
+    a{
+      text-decoration: none;
+      color: rgb(116, 252, 218);
+    }
+    .title-wrapper{
+      display: flex;
+      p{
+        margin: 15px 0px 15px 0px;
+      }
+    }
   }
   .img-wrapper{
     display: flex;

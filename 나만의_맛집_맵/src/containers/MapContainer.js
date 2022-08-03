@@ -4,7 +4,11 @@ import Map from '../components/Map'
 import ListCategories from '../components/ListCategories';
 import '../styles/mapContainer.scss';
 
-const MapContainer = () => {
+const MapContainer = ({
+  info,
+  centerLoca,
+  selectLocation  //  이후 추가 예정
+}) => {
   return (
     <div className="middle-wrapping">
       <div className="left">
@@ -12,7 +16,10 @@ const MapContainer = () => {
       </div>
       <div className="right">
         <div className="map-block">
-          <Map />
+          <Map
+            info={info}
+            centerLoca={centerLoca}
+          />
         </div>
       </div>
     </div>

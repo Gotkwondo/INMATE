@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 
 const { kakao } = window;
 
-const Map = () => {
+const Map = ({info, centerLoca}) => {
   //처음 지도 그리기  
   useEffect(() => {
 

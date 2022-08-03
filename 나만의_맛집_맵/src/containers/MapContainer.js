@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import changeCenter from '../modules/currentgeo'
+import selectLocation from '../modules/setCenter'
 import Map from '../components/Map'
 import ListCategories from '../components/ListCategories';
 import '../styles/mapContainer.scss';
@@ -27,6 +27,6 @@ export default connect(
   }),
   {
     //  액션 함수를 작성
-    changeCenter
+    selectLocation
   }
 )(MapContainer);

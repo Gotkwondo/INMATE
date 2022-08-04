@@ -25,24 +25,24 @@ const testArr = [
   },
 ];
 
-const ListItem = ({ list, onSelectLocation }) => {
+const ListItem = ({ locaInfo, onSelectLocation }) => {
   return (
-    <li onClick={onSelectLocation(list.id)}>
-      <span className='name'>{list.name}</span>
+    <li onClick={onSelectLocation(locaInfo.id)}>
+      <span className='name'>{locaInfo.name}</span>
       <br />
-      <span className='kind'>{list.kind}</span>
+      <span className='kind'>{locaInfo.kind}</span>
     </li>
   );
 };
 
 
-const ListCategories = ({ onSelectLocation }) => {
+const ListCategories = ({ onSelectLocation, locaInfo }) => {
   return (
     <ul>
       {testArr.map(list => (
         <ListItem
           onSelectLocation={onSelectLocation}
-          list={list}
+          locaInfo={locaInfo}
           key={list.id}
         />
       ))}

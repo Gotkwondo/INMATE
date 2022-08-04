@@ -12,7 +12,10 @@ const MapContainer = ({
   return (
     <div className="middle-wrapping">
       <div className="left">
-        <ListCategories/>
+        <ListCategories
+          locaInfo={info}
+          onSelectLocation={selectLocation}
+        />
       </div>
       <div className="right">
         <div className="map-block">

@@ -7,7 +7,10 @@ const SELECT_LOCATION = 'setCenter/SELECT_LOCATION'
 
 // export const changeCenter = createAction(CHANGE_CENTER, id => id);
 
-export const selectLocation = createAction(SELECT_LOCATION, id => id);
+export const selectLocation = createAction(SELECT_LOCATION, id => {
+  // id;
+  console.log(id);
+});
 
 const initialState = {
   info: [

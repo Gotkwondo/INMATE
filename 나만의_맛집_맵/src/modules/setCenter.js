@@ -1,16 +1,12 @@
 import { handleActions, createAction } from 'redux-actions';
 import produce from 'immer';
 
-
-// const CHANGE_CENTER = 'setCenter/CHANGE_CENTER';
 const SELECT_LOCATION = 'setCenter/SELECT_LOCATION'
-
-// export const changeCenter = createAction(CHANGE_CENTER, id => id);
 
 export const selectLocation = createAction(SELECT_LOCATION, id => id);
 
 const initialState = {
-  info: [
+  infos: [
     {
       latlng: [37.443014, 126.708708],
       name: '요리야 김밥',
@@ -32,7 +28,7 @@ const initialState = {
   ],
   centerLoca: {
     selectID: 0,
-    latlng: [0, 0]
+    latlng: [37.443014, 126.708708]
   }
 };
   
@@ -41,9 +37,11 @@ const setCenter = handleActions(
   {
     [SELECT_LOCATION]: (state, { payload: id }) =>
       produce(state, draft => {
-        const index = draft.info.findIndex(info => info.id === id);
+        const index = draft.infos.findIndex(info => info.id === id);
+        draft.centerLoca.latlng = draft.infos[index].latlng;
         draft.centerLoca.selectID = index + 1;
-        draft.centerLoca.latlng = draft.info[index].latlng;
+        // console.log(index);
+        // console.log(state);
       })
   },
   initialState

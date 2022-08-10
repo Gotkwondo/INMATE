@@ -3,10 +3,10 @@ import React, { useEffect } from 'react';
 
 const { kakao } = window;
 
-const Map = ({info, centerLoca}) => {
+const Map = ({ info, centerLoca }) => {
   //처음 지도 그리기  
   useEffect(() => {
-
+    
     const container = document.getElementById('map');
     const mapOptions = {
       //  geolocation이 작동하지 않을때 표시할 중심 좌표
@@ -25,7 +25,6 @@ const Map = ({info, centerLoca}) => {
         
         //  마커 표시 좌표와 표시할 메시지
         const locPosition = new kakao.maps.LatLng(currentLat, currentLng);
-        const message = `<div>현재 위치</div>`;
         
         kakaoMap.setCenter(locPosition);
       };

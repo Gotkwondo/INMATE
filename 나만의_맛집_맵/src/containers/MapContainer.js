@@ -5,7 +5,7 @@ import ListCategories from '../components/ListCategories';
 import '../styles/mapContainer.scss';
 
 const MapContainer = ({
-  info,
+  infos,
   centerLoca,
   selectLocation  //  이후 추가 예정
 }) => {
@@ -13,14 +13,14 @@ const MapContainer = ({
     <div className="middle-wrapping">
       <div className="left">
         <ListCategories
-          locaInfo={info}
+          infos={infos}
           onSelectLocation={selectLocation}
         />
       </div>
       <div className="right">
         <div className="map-block">
           <Map
-            info={info}
+            info={infos}
             centerLoca={centerLoca}
           />
         </div>
@@ -35,7 +35,7 @@ export default connect(
   //  모듈에서 export한 상태를 모듈을 가져와야 가능하다.
   //  이 상황에서는 state로 작성할 경우 에러가 발생하며 setCenter로 작성해야 한다.
   ({ setCenter }) => ({
-    info: setCenter.info,
+    infos: setCenter.infos,
     centerLoca: setCenter.centerLoca
   }),
   {

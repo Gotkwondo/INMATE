@@ -1,20 +1,20 @@
 /* global kakao */
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 
 const { kakao } = window;
 
-const Map = ({ info, centerLoca }) => {
-  //처음 지도 그리기  
+const Map = ({ infos, centerLoca }) => {
+  const container = useRef();
+  //처음 지도 그리기
   useEffect(() => {
     
-    const container = document.getElementById('map');
     const mapOptions = {
       //  geolocation이 작동하지 않을때 표시할 중심 좌표
       center: new kakao.maps.LatLng(37.443014, 126.708708),  //  geo.lat, geo.lng 형식으로 할까?
       level: 3,
     };
     //  지도 생성
-    const kakaoMap = new kakao.maps.Map(container, mapOptions);
+    const kakaoMap = new kakao.maps.Map(container.current, mapOptions);
 
     //  현제 위치 렌더링에 필요한 좌표
     
@@ -118,7 +118,7 @@ const Map = ({ info, centerLoca }) => {
   }, []);
   return (
     <>
-      <div id="map"></div>
+      <div id="map" ref={container}></div>
     </>
   );
 };

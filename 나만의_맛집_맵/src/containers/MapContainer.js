@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { selectLocation } from '../modules/setCenter';
+import { selectLocationAsync } from '../modules/setCenter';
 import Map from '../components/Map';
 import ListCategories from '../components/ListCategories';
 import '../styles/mapContainer.scss';
@@ -7,20 +7,20 @@ import '../styles/mapContainer.scss';
 const MapContainer = ({
   infos,
   centerLoca,
-  selectLocation  //  이후 추가 예정
+  selectLocationAsync
 }) => {
   return (
     <div className="middle-wrapping">
       <div className="left">
         <ListCategories
           infos={infos}
-          onSelectLocation={selectLocation}
+          onSelectLocation={selectLocationAsync}
         />
       </div>
       <div className="right">
         <div className="map-block">
           <Map
-            info={infos}
+            infos={infos}
             centerLoca={centerLoca}
           />
         </div>
@@ -40,6 +40,6 @@ export default connect(
   }),
   {
     //  액션 함수를 작성
-    selectLocation
+    selectLocationAsync
   }
 )(MapContainer);

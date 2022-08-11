@@ -1,9 +1,13 @@
 import { handleActions, createAction } from 'redux-actions';
-import produce from 'immer';
 
 const SELECT_LOCATION = 'setCenter/SELECT_LOCATION'
 
 export const selectLocation = createAction(SELECT_LOCATION, id => id);
+
+//  비동기 방식으로 동작하여 이전의 state를 다음 액션 결과로 가져오지 않게 함
+export const selectLocationAsync = (id) => dispatch => {
+  dispatch(selectLocation(id));
+}
 
 const initialState = {
   infos: [
@@ -35,14 +39,12 @@ const initialState = {
 
 const setCenter = handleActions(
   {
-    [SELECT_LOCATION]: (state, { payload: id }) =>
-      produce(state, draft => {
-        const index = draft.infos.findIndex(info => info.id === id);
-        draft.centerLoca.latlng = draft.infos[index].latlng;
-        draft.centerLoca.selectID = index + 1;
-        // console.log(index);
-        // console.log(state);
-      })
+    [SELECT_LOCATION]: (state, { payload: id }) => {
+      const index = state.infos.findIndex(info => info.id === id);
+      state.centerLoca.latlng = state.infos[index].latlng;
+      state.centerLoca.selectID = index + 1;
+      return state;
+    },
   },
   initialState
 );

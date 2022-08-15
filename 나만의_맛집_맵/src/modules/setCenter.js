@@ -14,20 +14,20 @@ const initialState = {
     {
       latlng: [37.443014, 126.708708],
       name: '요리야 김밥',
+      adress: "인천시 남동구 인하로 559",
       id: 1,
-      show: false
     },
     {
       latlng: [37.442971, 126.708892],
       name: '서오릉 피자',
+      adress: "인천시 남동구 인하로 559",
       id: 2,
-      show: false
     },
     {
       latlng: [37.413328, 126.678618],
       name: '그시절 동태탕',
+      adress: "인천시 연수구 샘말로 37-8",
       id: 3,
-      show: false
     },
   ],
   centerLoca: {

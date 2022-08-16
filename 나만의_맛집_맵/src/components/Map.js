@@ -1,54 +1,52 @@
 /* global kakao */
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
-const { kakao } = window;
+// const { kakao } = window;
 
 const Map = ({ infos, centerLoca }) => {
+  //
+
+  const [kakaoMap, setKakaoMap] = useState(null);
+  // const [center, setCenter] = useState([...centerLoca.latlng]);
+
   const container = useRef();
-  //처음 지도 그리기
+  
+  //지도 그리기
   useEffect(() => {
-    const mapOptions = {
-      //  geolocation이 작동하지 않을때 표시할 중심 좌표
-      center: new kakao.maps.LatLng(37.443014, 126.708708),  //  geo.lat, geo.lng 형식으로 할까?
-      level: 3,
+    const center = new kakao.maps.LatLng(37.50802, 127.062835);
+    const options = {
+      center,
+      level: 3
     };
-    //  지도 생성
-    const kakaoMap = new kakao.maps.Map(container.current, mapOptions);
-    //  현제 위치 렌더링에 필요한 좌표
+    const map = new kakao.maps.Map(container.current, options);
+    //  현재위치
     if (navigator.geolocation) {
       const onGeoOk = (position) => {
         const currentLat = position.coords.latitude;
         const currentLng = position.coords.longitude;
         const locPosition = new kakao.maps.LatLng(currentLat, currentLng);
-        kakaoMap.setCenter(locPosition);
+        map.setCenter(locPosition);
       };
       const onGeoError = () => {
         alert("위치권한을 다시 확인해주세요ㅠㅠ");
       };
       navigator.geolocation.getCurrentPosition(onGeoOk, onGeoError);
     };
-    
-    //  마커에 사용될 이미지와 그 이미지의 사이즈 선언
-    const imageSrc = "https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png" // 마커이미지의 주소입니다
-    const imageSize = new kakao.maps.Size(24, 35);
-    infos.forEach(info => {
-      const markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize);
-      const content = `<div class="wrap">` +
-                      `    <div class="info">` + 
-                      `        <div class="title">` + 
-                      `            ${info.name}` + 
-                      `        </div>` + 
-                      `        <div class="body">` + 
-                      `            <div class="img">` +
-                      `                <img src="" width="73" height="70">` +
-                      `           </div>` + 
-                      `            <div class="desc">` + 
-                      `                <div class="ellipsis">주소 : ${info.adress}</div>` + 
-                      `            </div>` + 
-                      `        </div>` + 
-                      `    </div>` +    
-                      `</div>`;
+    setKakaoMap(map);
+  }, [container]);
 
+  //  마커 생성 및 오버레이 생성
+  useEffect(() => {
+
+    if (kakaoMap === null) {
+      return;
+    }
+    infos.forEach(info => {
+      const imageSrc = "https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png" // 마커이미지의 주소입니다
+      const imageSize = new kakao.maps.Size(24, 35);
+      const markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize);
+
+      //  마커 생성
       const marker = new kakao.maps.Marker({
         map: kakaoMap,
         position: new kakao.maps.LatLng(...info.latlng),
@@ -56,22 +54,48 @@ const Map = ({ infos, centerLoca }) => {
         image: markerImage
       });
 
+      //  오버레이에서 보여지는 형태
+      const content = `<div class="wrap">` +
+        `    <div class="info">` +
+        `        <div class="title">` +
+        `            ${info.name}` +
+        `        </div>` +
+        `        <div class="body">` +
+        `            <div class="img">` +
+        `                <img src="" width="73" height="70">` +
+        `           </div>` +
+        `            <div class="desc">` +
+        `                <div class="ellipsis">주소 : ${info.adress}</div>` +
+        `            </div>` +
+        `        </div>` +
+        `    </div>` +
+        `</div>`;
+      //  커스텀 오버레이
       let customOverlay = new kakao.maps.CustomOverlay({
         position: new kakao.maps.LatLng(...info.latlng),
         content: content,
       });
-
+      //  오버레이 생성과 제거(마우스 호버 여부)
       kakao.maps.event.addListener(marker, 'mouseover', () => {
         customOverlay.setMap(kakaoMap);
       });
-
       kakao.maps.event.addListener(marker, 'mouseout', () => {
         setTimeout(() => {
           customOverlay.setMap(null);
         }, 100);
       });
     });
-  }, []);
+    
+    // const selectedLoca = [centerLoca.latlng];
+    // if (selectedLoca.length > 1) {
+    //   console.log(selectedLoca);
+    //   // console.log(selectedLoca)
+    //   // const bounds = new kakao.maps.LatLngBounds();
+    //   // bounds.extend(selectedLoca);
+
+    //   // kakaoMap.setBounds(bounds);
+    // }
+  }, [kakaoMap, infos]);
   return (
     <>
       <div id="map" ref={container}></div>

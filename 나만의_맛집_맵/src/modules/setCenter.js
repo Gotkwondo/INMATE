@@ -1,13 +1,27 @@
-import { handleActions, createAction } from 'redux-actions';
+import { handleActions } from 'redux-actions';
 
-const SELECT_LOCATION = 'setCenter/SELECT_LOCATION'
+const SELECT_LOCATION = 'setCenter/SELECT_LOCATION';
+const SELECT_LOCATION_SECCESS = 'setCenter/SELECT_LOCATION_SECCESS';
+const SELECT_LOCATION_FAILURE = 'setCenter/SELECT_LOCATION_FAILURE';
 
-export const selectLocation = createAction(SELECT_LOCATION, id => id);
-
-//  비동기 방식으로 동작하여 이전의 state를 다음 액션 결과로 가져오지 않게 함
-export const selectLocationAsync = (id) => dispatch => {
-  dispatch(selectLocation(id));
-}
+export const selectLocationAsync = id => async dispatch => {
+  dispatch({ type: SELECT_LOCATION }); //  요청을 시작한 것을 알림
+  try {
+    // const response = await api.getPost(id);
+    dispatch({
+      type: SELECT_LOCATION_SECCESS,
+      payload: id
+    }); //  요청 성공
+  }
+  catch (e) {
+    dispatch({
+      type: SELECT_LOCATION_FAILURE,
+      payload: e,
+      error: true
+    }); //  에러 발생
+    throw e;  //  나중에 컴포넌트단에서 에러를 조회할 수 있게 해 줌
+  }
+};
 
 const initialState = {
   infos: [
@@ -31,20 +45,29 @@ const initialState = {
     },
   ],
   centerLoca: {
-    selectID: 0,
-    latlng: [37.443014, 126.708708]
+    // selectID: 0,
+    latlng: []
   }
 };
   
 
 const setCenter = handleActions(
   {
-    [SELECT_LOCATION]: (state, { payload: id }) => {
-      const index = state.infos.findIndex(info => info.id === id);
-      state.centerLoca.latlng = state.infos[index].latlng;
-      state.centerLoca.selectID = index + 1;
-      return state;
-    },
+    // [SELECT_LOCATION]: (state, { payload: id }) => {
+    //   const index = state.infos.findIndex(info => info.id === id);
+    //   state.centerLoca.latlng = state.infos[index].latlng;
+    //   state.centerLoca.selectID = index + 1;
+    //   return state;
+    // },
+    [SELECT_LOCATION]: (state, action) => ({
+      ...state,
+    }),
+    [SELECT_LOCATION_SECCESS]: (state, action) => ({
+      ...state,
+      centerLoca: {
+        latlng: state.infos[action.payload-1].latlng,
+      }
+    }),
   },
   initialState
 );

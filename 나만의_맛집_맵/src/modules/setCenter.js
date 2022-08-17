@@ -46,7 +46,7 @@ const initialState = {
   ],
   centerLoca: {
     // selectID: 0,
-    latlng: []
+    latlng: [null]
   }
 };
   
@@ -65,7 +65,7 @@ const setCenter = handleActions(
     [SELECT_LOCATION_SECCESS]: (state, action) => ({
       ...state,
       centerLoca: {
-        latlng: state.infos[action.payload-1].latlng,
+        latlng: [...state.infos[action.payload-1].latlng],
       }
     }),
   },

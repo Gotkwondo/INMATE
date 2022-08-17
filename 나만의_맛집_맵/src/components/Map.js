@@ -85,17 +85,17 @@ const Map = ({ infos, centerLoca }) => {
         }, 100);
       });
     });
-    
-    // const selectedLoca = [centerLoca.latlng];
-    // if (selectedLoca.length > 1) {
-    //   console.log(selectedLoca);
-    //   // console.log(selectedLoca)
-    //   // const bounds = new kakao.maps.LatLngBounds();
-    //   // bounds.extend(selectedLoca);
+    ///////////////////////////////////////////
+    const selectedLoca = [centerLoca.latlng];
+    if (selectedLoca[0] !== null) {
+      console.log(selectedLoca);
+      const bounds = new kakao.maps.LatLngBounds();
+      bounds.extend(new kakao.maps.LatLng(...selectedLoca));
 
-    //   // kakaoMap.setBounds(bounds);
-    // }
-  }, [kakaoMap, infos]);
+      kakaoMap.setBounds(bounds);
+    }
+  }, [kakaoMap, infos, centerLoca]);
+  ///////////////////////////////////////////
   return (
     <>
       <div id="map" ref={container}></div>

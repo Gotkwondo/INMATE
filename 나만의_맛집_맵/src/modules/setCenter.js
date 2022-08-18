@@ -46,7 +46,7 @@ const initialState = {
   ],
   centerLoca: {
     // selectID: 0,
-    latlng: [null]
+    latlng: 0
   }
 };
   

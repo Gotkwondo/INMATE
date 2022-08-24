@@ -1,5 +1,12 @@
+@import './utils.scss';
+
+@media(min-width: $desktop){
+
+}
+
+
 body{
-  background: rgb(230, 248, 247);
+  background: rgb(0, 248, 165);
 }
 .middle-wrapping{
   width: 100%;
@@ -15,19 +22,24 @@ body{
     height: 80vh;
     width: 20%;
     background: rgb(255, 255, 255);
-    border-right: 5px solid rgb(34, 252, 179);
-    // border-radius: 10px;
-    ul{
-      display: block;
-      padding-left: 0px;
-      margin: 0px;
-      list-style: none;
-      li{
-        border-bottom: 2px solid rgb(165, 165, 165);;
-        padding: 5px;
-      }
-      .name{
-        font-size: 15px;
+    // border-right: 5px solid rgb(34, 252, 179);
+    border-radius: 10px;
+    .left-innerWrapper{
+      // .list{
+      //   overflow-y: scroll;
+      // }
+      ul{
+        display: block;
+        padding-left: 0px;
+        margin: 0px;
+        list-style: none;
+        li{
+          border-bottom: 2px solid rgb(165, 165, 165);;
+          padding: 5px;
+        }
+        .name{
+          font-size: 15px;
+        }
       }
     }
   }

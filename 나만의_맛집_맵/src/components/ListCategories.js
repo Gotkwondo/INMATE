@@ -5,10 +5,11 @@ const ListItem = ({ info, onSelectLocation, style }) => {
   return (
     //  onClick을 사용할 때는 항상 함수 타입이 주어져야 된다.
     <li onClick={() => onSelectLocation(info.id)} style={style}>
-      <em className='name'>{info.name}</em>
-      {/* <br /> */}
-      <p className='kind'>{info.adress}</p>
-      <p>{info.phone}</p>
+      <div>
+        <em className='name'>{info.name}</em>
+        <p className='kind'>{info.adress}</p>
+        <p>{info.phone}</p>
+      </div>
     </li>
   );
 };
@@ -31,7 +32,7 @@ const ListCategories = ({ onSelectLocation, infos }) => {
 
 
   return (
-    <div className="left-innerWrapper" style={{width:"100%", height:"80vh"}}>
+    <div className="left-innerWrapper" style={{ width: "100%", height: "80vh" }}>
       <AutoSizer>
         {({ width, height }) => (
           <List
@@ -42,20 +43,9 @@ const ListCategories = ({ onSelectLocation, infos }) => {
             rowHeight={150}  //  항목 높이
             rowRenderer={rowRenderer} //  항목을 렌더링할 때 쓰는 함수
             list={infos}  //  배열
-            style={{ outline: 'none' }} //  List에 기본 적용되는 outline 스타일 제거
           ></List>
         )}
-        
       </AutoSizer>
-      {/* <ul>
-        {infos.map(info => (
-          <ListItem
-            onSelectLocation={onSelectLocation}
-            info={info}
-            key={info.id}
-          />
-        ))}
-      </ul> */}
     </div>
   );
 };

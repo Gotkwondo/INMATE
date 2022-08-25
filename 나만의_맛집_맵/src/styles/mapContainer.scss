@@ -14,28 +14,33 @@ body{
   display:flex;
   // background: rgb(144, 240, 227);
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: center;
   padding: 15px 0px 15px 0px;
   
   //  left css
   .left{
     height: 80vh;
-    width: 20%;
+    width: 30%;
     background: rgb(255, 255, 255);
     // border-right: 5px solid rgb(34, 252, 179);
     border-radius: 10px;
     .left-innerWrapper{
-      // .list{
-      //   overflow-y: scroll;
-      // }
-      ul{
-        display: block;
+      
+      .list{
+        // display: flex;
         padding-left: 0px;
-        margin: 0px;
         list-style: none;
         li{
-          border-bottom: 2px solid rgb(165, 165, 165);;
-          padding: 5px;
+          height: 130px;
+          border-top: 2px solid rgb(165, 165, 165);
+          border-radius: 10px;
+          // padding: 10px;
+          // margin: 0px 0px 10px 0px;
+          div{
+            // width: 100%;
+            // height: 10px;
+            padding: 10px;
+          }
         }
         .name{
           font-size: 15px;
@@ -46,7 +51,7 @@ body{
 
   //  right css
   .right{
-    width: 70%;
+    width: 60%;
     height: 100%;
   }
 }

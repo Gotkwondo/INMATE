@@ -49,7 +49,7 @@ const initialState = {
     {
       latlng: [37.4683, 126.6509],
       name: '오목골 즉석메밀우동',
-      adress: '인천 미추홀구 석정로 142 오목골즉석메밀우동',
+      adress: '인천 미추홀구 석정로 142',
       id: 4,
       phone: '032-868-1717'
     },
@@ -61,54 +61,40 @@ const initialState = {
       phone: '032-815-1025'
     },
     {
-      latlng: [37.4075, 126.6723],
-      name: '로스타임',
+      latlng: [37.4077, 126.6724],
+      name: '청실홍실 연수점',
       adress: '인천 연수구 앵고개로 260 맘모스빌딩',
-      id: 5,
-      phone: '032-815-1025'
+      id: 6,
+      phone: '032-822-7070'
     },
     {
-      latlng: [37.4075, 126.6723],
-      name: '로스타임',
-      adress: '인천 연수구 앵고개로 260 맘모스빌딩',
-      id: 5,
-      phone: '032-815-1025'
+      latlng: [37.3812, 126.6606],
+      name: '스시사쿠 송도',
+      adress: '인천 연수구 송도과학로16번길 13-18 119호',
+      id: 7,
+      phone: '0507-1331-0418'
     },
     {
-      latlng: [37.4075, 126.6723],
-      name: '로스타임',
-      adress: '인천 연수구 앵고개로 260 맘모스빌딩',
-      id: 5,
-      phone: '032-815-1025'
+      latlng: [37.4076, 126.6721],
+      name: '청담왕돈까스 동춘',
+      adress: '인천 연수구 앵고개로 260 맘모스빌딩 1층',
+      id: 8,
+      phone: '0507-1422-1358'
     },
     {
-      latlng: [37.4075, 126.6723],
-      name: '로스타임',
-      adress: '인천 연수구 앵고개로 260 맘모스빌딩',
-      id: 5,
-      phone: '032-815-1025'
+      latlng: [37.3954, 126.6491],
+      name: '송도술상',
+      adress: '인천 연수구 컨벤시아대로 80',
+      id: 9,
+      phone: ''
     },
     {
-      latlng: [37.4075, 126.6723],
-      name: '로스타임',
-      adress: '인천 연수구 앵고개로 260 맘모스빌딩',
-      id: 5,
-      phone: '032-815-1025'
+      latlng: [37.4282, 126.7223],
+      name: '봉순게장 구월점',
+      adress: '인천 남동구 덕골로 98-7',
+      id: 10,
+      phone: '032-471-7070'
     },
-    // {
-    //   latlng: [],
-    //   name: '',
-    //   adress: '',
-    //   id: 6,
-    //   phone: ''
-    // },
-    // {
-    //   latlng: [],
-    //   name: '',
-    //   adress: '',
-    //   id: 7,
-    //   phone: ''
-    // },
   ],
   centerLoca: {
     // selectID: 0,
@@ -119,12 +105,6 @@ const initialState = {
 
 const setCenter = handleActions(
   {
-    // [SELECT_LOCATION]: (state, { payload: id }) => {
-    //   const index = state.infos.findIndex(info => info.id === id);
-    //   state.centerLoca.latlng = state.infos[index].latlng;
-    //   state.centerLoca.selectID = index + 1;
-    //   return state;
-    // },
     [SELECT_LOCATION]: (state, action) => ({
       ...state,
     }),

@@ -4,12 +4,14 @@ import Map from '../components/Map';
 import ListCategories from '../components/ListCategories';
 import '../styles/mapContainer.scss';
 
-const MapContainer = ({
+const DesktopMapContainer = ({
   infos,
   centerLoca,
   selectLocationAsync
 }) => {
+
   return (
+    
     <div className="middle-wrapping">
       <div className="left">
         <ListCategories
@@ -42,4 +44,4 @@ export default connect(
     //  액션 함수를 작성
     selectLocationAsync
   }
-)(MapContainer);
+)(DesktopMapContainer);

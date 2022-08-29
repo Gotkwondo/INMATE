@@ -13,23 +13,26 @@ const DesktopMapContainer = ({
   return (
     
     <div className="middle-wrapping">
-      <div className="left">
-        <ListCategories
-          infos={infos}
-          onSelectLocation={selectLocationAsync}
-        />
-      </div>
-      <div className="right">
-        <div className="map-block">
-          <Map
+      <div className="contents">
+        <div className="left">
+          <ListCategories
             infos={infos}
-            centerLoca={centerLoca}
+            onSelectLocation={selectLocationAsync}
           />
         </div>
+        <div className="right">
+          <div className="map-block">
+            <Map
+              infos={infos}
+              centerLoca={centerLoca}
+            />
+          </div>
+        </div>
       </div>
+      
     </div>
   )
-}
+};
 
 //  이후 맛집 리스트를 연결할 때 사용
 export default connect(

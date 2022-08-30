@@ -61,11 +61,9 @@ const Map = ({ infos, centerLoca }) => {
         `            ${info.name}` +
         `        </div>` +
         `        <div class="body">` +
-        `            <div class="img">` +
-        `                <img src="" width="73" height="70">` +
-        `           </div>` +
         `            <div class="desc">` +
-        `                <div class="ellipsis">주소 : ${info.adress}</div>` +
+        `                <p class="ellipsis">주소 : ${info.adress}</p>` +
+        `                <p class="ellipsis">전화번호 : ${info.phone ? info.phone : '없음'}</p>` +
         `            </div>` +
         `        </div>` +
         `    </div>` +

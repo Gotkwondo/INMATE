@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/INMATE/static/css/main.35bbf2d4.css",
+    "main.js": "/INMATE/static/js/main.3d083ff6.js",
+    "static/js/787.142da1d4.chunk.js": "/INMATE/static/js/787.142da1d4.chunk.js",
+    "static/media/kisspng-github-computer-software-logo-source-code-github-logo-png-5cc8c808c04229.png": "/INMATE/static/media/kisspng-github-computer-software-logo-source-code-github-logo-png-5cc8c808c04229.7905269215566622807875.1ff6d9646165b7f34af9.png",
+    "index.html": "/INMATE/index.html",
+    "static/media/tistory.svg": "/INMATE/static/media/tistory.89779f2b3fe49ebdfd4d3b0deab39eee.svg",
+    "main.35bbf2d4.css.map": "/INMATE/static/css/main.35bbf2d4.css.map",
+    "main.3d083ff6.js.map": "/INMATE/static/js/main.3d083ff6.js.map",
+    "787.142da1d4.chunk.js.map": "/INMATE/static/js/787.142da1d4.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.35bbf2d4.css",
+    "static/js/main.3d083ff6.js"
+  ]
+}

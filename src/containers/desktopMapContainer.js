@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
-import { selectLocationAsync } from '../modules/setCenter';
-import Map from '../components/Map';
-import ListCategories from '../components/ListCategories';
+import { selectLocationAsync } from '../module/setCenter';
+import Map from '../components/modules/Map/Map';
+import ListCategories from '../components/modules/ListCategories/ListCategories';
 import '../styles/mapContainer.scss';
 
 const DesktopMapContainer = ({

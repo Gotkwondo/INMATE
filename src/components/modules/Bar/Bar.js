@@ -1,4 +1,4 @@
-import '../styles/bar.scss';
+import '../../../styles/bar.scss';
 
 const Bar = () => {
   return (
@@ -11,7 +11,7 @@ const Bar = () => {
         </div>
         <div className="link">
           <p>
-            코드 링크 : <a href="https://github.com/Gotkwondo/Side-Project/tree/main/%EB%82%98%EB%A7%8C%EC%9D%98_%EB%A7%9B%EC%A7%91_%EB%A7%B5">https://github.com/Gotkwondo/Side-Project/tree/main/나만의_맛집_맵</a>
+            코드 링크 : <a href="https://github.com/Gotkwondo/INMATE">https://github.com/Gotkwondo/INMATE</a>
           </p>
           <br/>
           <p>

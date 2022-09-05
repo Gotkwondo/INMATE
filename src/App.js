@@ -1,6 +1,6 @@
 import DesktopMapContainer from './containers/desktopMapContainer'
-import Title from './components/Title';
-import Bar from './components/Bar';
+import Title from './components/modules/Title/Title';
+import Bar from './components/modules/Bar/Bar';
 
 
 const App = () => {

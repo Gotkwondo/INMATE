@@ -1,35 +1,20 @@
 import { connect } from 'react-redux';
 import { selectLocationAsync } from '../module/setCenter';
-import Map from '../components/modules/Map/Map';
-import ListCategories from '../components/modules/ListCategories/ListCategories';
-import '../styles/mapContainer.scss';
+import Right from '../components/modules/Right';
+import Left from "../components/modules/Left";
+import './middleContainer.scss';
 
 const DesktopMapContainer = ({
   infos,
   centerLoca,
   selectLocationAsync
 }) => {
-
   return (
-    
     <div className="middle-wrapping">
       <div className="contents">
-        <div className="left">
-          <ListCategories
-            infos={infos}
-            onSelectLocation={selectLocationAsync}
-          />
-        </div>
-        <div className="right">
-          <div className="map-block">
-            <Map
-              infos={infos}
-              centerLoca={centerLoca}
-            />
-          </div>
-        </div>
+        <Left infos={infos} onSelectLocation={selectLocationAsync} />
+        <Right infos={infos} centerLoca={centerLoca}/>
       </div>
-      
     </div>
   )
 };

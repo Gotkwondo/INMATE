@@ -1,4 +1,4 @@
-import '../../../styles/bar.scss';
+import './bar.scss';
 
 const Bar = () => {
   return (

@@ -1,5 +1,5 @@
-import DesktopMapContainer from './containers/desktopMapContainer'
-import Title from './components/modules/Title/Title';
+import MiddleContainer from './containers/MiddleContainer'
+import Title from './components/modules/Title';
 import Bar from './components/modules/Bar/Bar';
 
 
@@ -15,7 +15,7 @@ const App = () => {
     <div className="wrapper">
       <div className="container">
         <Title />
-        <DesktopMapContainer />
+        <MiddleContainer />
         <Bar />
       </div>
     </div>

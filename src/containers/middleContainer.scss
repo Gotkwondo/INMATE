@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+
+//  Phone & Tablet
+@media(max-width: 1023px){
+  .middle-wrapping{
+    // width: 100%;
+    font-family: 'Noto Sans KR', sans-serif;
+    padding: 20px 20px 35px 20px;
+    .contents{
+      border: 1px solid grey;display: flex;
+      flex-direction: column-reverse;
+      background: rgb(255, 255, 255);
+    }
+  }
+}
+
+@media(min-width: 1024px){
+  .middle-wrapping{
+    font-family: 'Noto Sans KR', sans-serif;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 15px 0px 45px 0px;
+
+    .contents{
+      width: 97%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      display: flex;
+    }
+  }
+}
+
+body{
+  background: rgb(247, 246, 214);
+  
+}

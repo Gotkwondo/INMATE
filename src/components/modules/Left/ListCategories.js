@@ -1,22 +1,6 @@
 import { List, AutoSizer } from 'react-virtualized';
 import { useCallback } from 'react';
-
-const ListItem = ({ info, onSelectLocation, style }) => {
-  return (
-    //  onClick을 사용할 때는 항상 함수 타입이 주어져야 된다.
-    <li onClick={() => onSelectLocation(info.id)} style={style}>
-      <div className='list_area'>
-        <em className='name'>{info.name}</em>
-        <div className='info'>
-          <p className='kind'>{info.adress}</p>
-          <p>{info.phone}</p>
-        </div>
-        
-      </div>
-    </li>
-  );
-};
-
+import ListItem from './ListItem';
 
 const ListCategories = ({ onSelectLocation, infos }) => {
   const rowRenderer = useCallback(
@@ -29,10 +13,9 @@ const ListCategories = ({ onSelectLocation, infos }) => {
           key={key}
           style={style}
         />
-      )
-    },[onSelectLocation, infos]
-  )
-
+      );
+    }, [onSelectLocation, infos]
+  );
 
   return (
     <div className="left-innerWrapper" style={{ width: "100%", height: "80vh" }}>

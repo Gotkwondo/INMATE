@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+
+//  Phone & Tablet
+@media(max-width: 1023px){
+  .left{
+    background: rgb(255, 255, 255);
+    // border-top: 1px solid grey;
+    .list{
+      // display: flex;
+      padding-left: 0px;
+      li{
+        height: 130px;
+        border-bottom: 1px solid rgb(165, 165, 165);
+        list-style: none;
+        .list_area{
+          padding: 10px;
+          height: 130px;
+          .info{
+            margin-top: 17px;
+            p{
+              margin: 9px 0px 0px 0px;
+            }
+          }
+        }
+      }
+      .name{
+        font-size: 18px;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+@media(min-width: 1024px){
+  //  left css
+  .left{
+    height: 80vh;
+    flex-basis: 300px;
+    background: rgb(255, 255, 255);
+    border: 2px solid grey;
+    .left-innerWrapper{
+      .list{
+        // display: flex;
+        padding-left: 0px;
+        list-style: none;
+        li{
+          height: 130px;
+          border-bottom: 2px solid rgb(165, 165, 165);
+          .list_area{
+            padding: 10px;
+            height: 130px;
+            .info{
+              margin-top: 10px;
+              p{
+                margin: 9px 0px 0px 0px;
+              }
+            }      
+            .name{
+              font-size: 20px;
+              font-weight: bold;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+//옮겨야 할 것
+body{
+  background: rgb(247, 246, 214);
+}

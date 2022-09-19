@@ -8,10 +8,12 @@ const db = mysql.createConnection({
   user: 'root',
   password: 'oo991128',
   database: 'INMATE',
-  port: port
+  port: port  //  DB가 사용하는 포트 이용
 });
 db.connect();
+//  기본 주소로 접속 시 서버는 아래의 동작을 한다.
 app.get("/", (req, res) => {
+  //  mysql에서 query를 이용해 Table의 정보를 SELECT해오는 query를 입력
   db.query("SELECT * FROM restaurant_list", (err, result) => {
     if (err) {
       res.send(err, 'check');

@@ -1,5 +1,6 @@
 const express = require('express');
 const mysql = require('mysql');
+const cors = require('cors');
 const app = express();
 const port = 3307;
 
@@ -11,17 +12,19 @@ const db = mysql.createConnection({
   port: port  //  DB가 사용하는 포트 이용
 });
 db.connect();
+
+app.use(cors());
+
 //  기본 주소로 접속 시 서버는 아래의 동작을 한다.
-app.get("/", (req, res) => {
+app.get("/restaurant_list", (req, res) => {
   //  mysql에서 query를 이용해 Table의 정보를 SELECT해오는 query를 입력
   db.query("SELECT * FROM restaurant_list", (err, result) => {
     if (err) {
       res.send(err, 'check');
     }
-    console.log(result)
+    res.send(result);
   })
 });
-
 app.listen(port, () => {
   console.log(`running on port ${port}`);
 });

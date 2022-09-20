@@ -3,7 +3,7 @@ import React, { useEffect, useRef, useState } from 'react';
 
 // const { kakao } = window;
 
-const Map = ({ infos, centerLoca }) => {
+const Map = ({ lists, centerLoca }) => {
   //
 
   const [kakaoMap, setKakaoMap] = useState(null);
@@ -41,7 +41,7 @@ const Map = ({ infos, centerLoca }) => {
     if (kakaoMap === null) {
       return;
     }
-    infos.forEach(info => {
+    lists.forEach(info => {
       const imageSrc = "https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png" // 마커이미지의 주소입니다
       const imageSize = new kakao.maps.Size(24, 35);
       const markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize);
@@ -91,7 +91,7 @@ const Map = ({ infos, centerLoca }) => {
       bounds.extend(new kakao.maps.LatLng(...selectedLoca));
       kakaoMap.setBounds(bounds);
     }
-  }, [kakaoMap, infos, centerLoca]);
+  }, [kakaoMap, lists, centerLoca]);
   return (
     <>
       <div id="map" ref={container}></div>

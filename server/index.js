@@ -18,7 +18,7 @@ app.use(cors());
 //  기본 주소로 접속 시 서버는 아래의 동작을 한다.
 app.get("/restaurant_list", (req, res) => {
   //  mysql에서 query를 이용해 Table의 정보를 SELECT해오는 query를 입력
-  db.query("SELECT * FROM restaurant_list", (err, result) => {
+  db.query("SELECT id,latlng,name,adress,number FROM restaurant_list", (err, result) => {
     if (err) {
       res.send(err, 'check');
     }

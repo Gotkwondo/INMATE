@@ -24,7 +24,7 @@ export const selectLocationAsync = id => async dispatch => {
 };
 
 const initialState = {
-  infos: [
+  lists: [
     {
       latlng: [37.443014, 126.708708],
       name: '요리야 김밥',
@@ -111,7 +111,7 @@ const setCenter = handleActions(
     [SELECT_LOCATION_SECCESS]: (state, action) => ({
       ...state,
       centerLoca: {
-        latlng: [...state.infos[action.payload-1].latlng],
+        latlng: [...state.lists[action.payload-1].latlng],
       }
     }),
   },

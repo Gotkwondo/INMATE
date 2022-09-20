@@ -3,17 +3,23 @@ import { selectLocationAsync } from '../module/setCenter';
 import Right from '../components/modules/Right';
 import Left from "../components/modules/Left";
 import './middleContainer.scss';
+// import { useState } from 'react';
+import axios from 'axios';
+// import { useEffect } from 'react';
 
 const DesktopMapContainer = ({
-  infos,
+  lists,
   centerLoca,
   selectLocationAsync
 }) => {
+  axios.get('http://localhost:3307/restaurant_list')
+      .then(res => console.log(res.data))
+      .catch()
   return (
     <div className="middle-wrapping">
       <div className="contents">
-        <Left infos={infos} onSelectLocation={selectLocationAsync} />
-        <Right infos={infos} centerLoca={centerLoca}/>
+        <Left lists={lists} selectLocationAsync={selectLocationAsync} />
+        <Right lists={lists} centerLoca={centerLoca}/>
       </div>
     </div>
   )
@@ -25,7 +31,7 @@ export default connect(
   //  모듈에서 export한 상태를 모듈을 가져와야 가능하다.
   //  이 상황에서는 state로 작성할 경우 에러가 발생하며 setCenter로 작성해야 한다.
   ({ setCenter }) => ({
-    infos: setCenter.infos,
+    lists: setCenter.lists,
     centerLoca: setCenter.centerLoca
   }),
   {

@@ -1,11 +1,11 @@
 import './left.scss';
 import ListCategories from './ListCategories';
 
-const Left = ({ infos, selectLocationAsync }) => {
+const Left = ({ lists, selectLocationAsync }) => {
   return (
     <div className="left">
       <ListCategories
-        infos={infos}
+        lists={lists}
         onSelectLocation={selectLocationAsync}
       />
     </div>

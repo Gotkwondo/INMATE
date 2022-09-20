@@ -2,19 +2,19 @@ import { List, AutoSizer } from 'react-virtualized';
 import { useCallback } from 'react';
 import ListItem from './ListItem';
 
-const ListCategories = ({ onSelectLocation, infos }) => {
+const ListCategories = ({ onSelectLocation, lists }) => {
   const rowRenderer = useCallback(
     ({ index, key, style }) => {
-      const info = infos[index];
+      const list = lists[index];
       return (
         <ListItem
           onSelectLocation={onSelectLocation}
-          info={info}
+          list={list}
           key={key}
           style={style}
         />
       );
-    }, [onSelectLocation, infos]
+    }, [onSelectLocation, lists]
   );
 
   return (
@@ -25,10 +25,10 @@ const ListCategories = ({ onSelectLocation, infos }) => {
             className="list"
             width={width}   //  전체 크기
             height={height}  //  전체 높이
-            rowCount={infos.length} //  항목 개수
+            rowCount={lists.length} //  항목 개수
             rowHeight={150}  //  항목 높이
             rowRenderer={rowRenderer} //  항목을 렌더링할 때 쓰는 함수
-            list={infos}  //  배열
+            list={lists}  //  배열
           ></List>
         )}
       </AutoSizer>

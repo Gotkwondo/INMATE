@@ -3,7 +3,7 @@ import React, { useEffect, useRef, useState } from 'react';
 
 // const { kakao } = window;
 
-const Map = ({ lists, centerLoca }) => {
+const Map = ({ list, centerLoca }) => {
   //
 
   const [kakaoMap, setKakaoMap] = useState(null);
@@ -41,7 +41,7 @@ const Map = ({ lists, centerLoca }) => {
     if (kakaoMap === null) {
       return;
     }
-    lists.forEach(info => {
+    list.forEach(info => {
       const imageSrc = "https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png" // 마커이미지의 주소입니다
       const imageSize = new kakao.maps.Size(24, 35);
       const markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize);
@@ -49,7 +49,8 @@ const Map = ({ lists, centerLoca }) => {
       //  마커 생성
       const marker = new kakao.maps.Marker({
         map: kakaoMap,
-        position: new kakao.maps.LatLng(...info.latlng),
+        // position: new kakao.maps.LatLng(...info.latlng),
+        position: new kakao.maps.LatLng(info.lat, info.lng),
         clickable: true, //  마커를 클릭했을 때 지도의 클릭 이벤트 발생 방지
         image: markerImage
       });
@@ -70,7 +71,7 @@ const Map = ({ lists, centerLoca }) => {
         `</div>`;
       //  커스텀 오버레이
       let customOverlay = new kakao.maps.CustomOverlay({
-        position: new kakao.maps.LatLng(...info.latlng),
+        position: new kakao.maps.LatLng(info.lat, info.lng),
         content: content,
       });
       //  오버레이 생성과 제거(마우스 호버 여부)
@@ -91,7 +92,7 @@ const Map = ({ lists, centerLoca }) => {
       bounds.extend(new kakao.maps.LatLng(...selectedLoca));
       kakaoMap.setBounds(bounds);
     }
-  }, [kakaoMap, lists, centerLoca]);
+  }, [kakaoMap, list, centerLoca]);
   return (
     <>
       <div id="map" ref={container}></div>

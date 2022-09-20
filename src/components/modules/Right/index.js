@@ -1,12 +1,12 @@
 import Map from './Map';
 import './right.scss'
 
-const Right = ({lists, centerLoca}) => {
+const Right = ({list, centerLoca}) => {
   return (
     <div className="right">
       <div className="map-block">
         <Map
-          lists={lists}
+          list={list}
           centerLoca={centerLoca}
         />
       </div>

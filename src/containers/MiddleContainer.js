@@ -3,23 +3,28 @@ import { selectLocationAsync } from '../module/setCenter';
 import Right from '../components/modules/Right';
 import Left from "../components/modules/Left";
 import './middleContainer.scss';
-// import { useState } from 'react';
+import { useState } from 'react';
 import axios from 'axios';
-// import { useEffect } from 'react';
+import { useEffect } from 'react';
 
 const DesktopMapContainer = ({
   lists,
   centerLoca,
   selectLocationAsync
 }) => {
-  axios.get('http://localhost:3307/restaurant_list')
-      .then(res => console.log(res.data))
+  const [list, setLists] = useState([]);
+  
+  useEffect(() => {
+    axios.get('http://localhost:3307/restaurant_list')
+      .then(res => setLists(res.data))
       .catch()
+  }, []);
+
   return (
     <div className="middle-wrapping">
       <div className="contents">
-        <Left lists={lists} selectLocationAsync={selectLocationAsync} />
-        <Right lists={lists} centerLoca={centerLoca}/>
+        <Left list={list} selectLocationAsync={selectLocationAsync} />
+        <Right list={list} centerLoca={centerLoca}/>
       </div>
     </div>
   )

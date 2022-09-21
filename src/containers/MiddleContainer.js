@@ -8,7 +8,6 @@ import axios from 'axios';
 import { useEffect } from 'react';
 
 const DesktopMapContainer = ({
-  lists,
   centerLoca,
   selectLocationAsync
 }) => {
@@ -36,7 +35,6 @@ export default connect(
   //  모듈에서 export한 상태를 모듈을 가져와야 가능하다.
   //  이 상황에서는 state로 작성할 경우 에러가 발생하며 setCenter로 작성해야 한다.
   ({ setCenter }) => ({
-    lists: setCenter.lists,
     centerLoca: setCenter.centerLoca
   }),
   {

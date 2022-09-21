@@ -49,7 +49,6 @@ const Map = ({ list, centerLoca }) => {
       //  마커 생성
       const marker = new kakao.maps.Marker({
         map: kakaoMap,
-        // position: new kakao.maps.LatLng(...info.latlng),
         position: new kakao.maps.LatLng(info.lat, info.lng),
         clickable: true, //  마커를 클릭했을 때 지도의 클릭 이벤트 발생 방지
         image: markerImage
@@ -85,11 +84,11 @@ const Map = ({ list, centerLoca }) => {
       });
     });
 
-    const selectedLoca = centerLoca.latlng;
+    // const selectedLoca = centerLoca.latlng;
     const bounds = new kakao.maps.LatLngBounds();
-    if (selectedLoca !== 0) {
+    if (centerLoca.lat !== 0 && centerLoca.lat !== 0) {
       // console.log(selectedLoca);
-      bounds.extend(new kakao.maps.LatLng(...selectedLoca));
+      bounds.extend(new kakao.maps.LatLng(centerLoca.lat, centerLoca.lng));
       kakaoMap.setBounds(bounds);
     }
   }, [kakaoMap, list, centerLoca]);

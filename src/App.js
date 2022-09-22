@@ -4,10 +4,7 @@ import Mainpage from './pages/mainpage';
 
 const App = () => {
   return (
-    <div className="wrapper">
-      <div className="container">
-        {/* <Inmate_mapList /> */}
-      </div>
+    <div>
       <Routes>
         <Route path="/INMATE/" element={<Mainpage />} />
         <Route path="/INMATE/maplist" element={<MapListPage />} />

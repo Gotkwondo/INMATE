@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { selectLocationAsync } from '../module/setCenter';
-import Right from '../components/modules/Right';
-import Left from "../components/modules/Left";
+import Right from '../components/Right';
+import Left from "../components/Left";
 import './middleContainer.scss';
 import { useState } from 'react';
 import axios from 'axios';

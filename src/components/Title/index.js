@@ -1,7 +1,7 @@
-import Image from './Image';
+import Image from '../modules/Image';
 import './title.scss';
-import GitImage from "../../../static/img/kisspng-github-computer-software-logo-source-code-github-logo-png-5cc8c808c04229.7905269215566622807875.png";
-import TistoryImage from "../../../static/img/tistory.svg";
+import GitImage from "../../static/img/kisspng-github-computer-software-logo-source-code-github-logo-png-5cc8c808c04229.7905269215566622807875.png";
+import TistoryImage from "../../static/img/tistory.svg";
 
 const Title = () => {
   return (

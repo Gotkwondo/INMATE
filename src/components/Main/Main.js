@@ -1,29 +1,13 @@
-import { Link } from 'react-router-dom';
-import Image from '../modules/Image';
+import MainContentsListElement from '../modules/Main_contents_list_element';
 import testImage from '../../static/img/test_Image.jpg'
 
 const Main = () => {
   return (
     <div className="main_contents">
       <div className="main_contents_list">
-        <div className="main_contents_list_element">
-          <div className="link_wrapper">
-            <Link to="/INMATE/maplist">인천 맛집 지도</Link>
-          </div>
-          <Image url="/INMATE/maplist" src={testImage}/>
-        </div>
-        <div className="main_contents_list_element">
-          <div className="link_wrapper">
-            <Link to="/INMATE/webinfo">웹의 정보</Link>
-          </div>
-          <Image url="/INMATE/maplist" src={testImage}/>
-        </div>
-        <div className="main_contents_list_element">
-          <div className="link_wrapper">
-            <Link to="/INMATE/dev">개발일지</Link>
-          </div>
-          <Image url="/INMATE/maplist" src={testImage}/>
-        </div>
+        <MainContentsListElement url="/INMATE/maplist" imgSrc={testImage} text="인천 맛집 지도" />
+        <MainContentsListElement url="/INMATE/webinfo" imgSrc={testImage} text="웹의 정보" />
+        <MainContentsListElement url="/INMATE/dev" imgSrc={testImage} text="개발일지" />
       </div>
     </div>
   );

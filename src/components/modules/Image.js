@@ -6,7 +6,7 @@ const Image = ({ url, src }) => {
         <img src={src} alt="" target='_blank' rel='noreferrer' />
       </a>
     </li>
-  )
-}
+  );
+};
 
 export default Image;

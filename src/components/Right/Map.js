@@ -63,7 +63,7 @@ const Map = ({ list, centerLoca }) => {
         `        <div class="body">` +
         `            <div class="desc">` +
         `                <p class="ellipsis">주소 : ${info.adress}</p>` +
-        `                <p class="ellipsis">전화번호 : ${info.phone ? info.phone : '없음'}</p>` +
+        `                <p class="ellipsis">전화번호 : ${info.number ? info.number : '없음'}</p>` +
         `            </div>` +
         `        </div>` +
         `    </div>` +

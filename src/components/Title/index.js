@@ -2,12 +2,13 @@ import Image from '../modules/Image';
 import './title.scss';
 import GitImage from "../../static/img/kisspng-github-computer-software-logo-source-code-github-logo-png-5cc8c808c04229.7905269215566622807875.png";
 import TistoryImage from "../../static/img/tistory.svg";
+import { Link } from 'react-router-dom';
 
 const Title = () => {
   return (
     <div className="hd-wrapper">
       <div className="title">
-        <a href='./'>
+        <Link to="/INMATE">
           <div className='title-wrapper'>
             <p>I</p>
             <p>N</p>
@@ -16,7 +17,7 @@ const Title = () => {
             <p>T</p>
             <p>E</p>
           </div>
-        </a>
+        </Link>
       </div>
       <div className="img-wrapper">
         <ul>

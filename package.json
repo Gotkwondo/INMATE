@@ -38,6 +38,7 @@
     "jest": "^27.4.3",
     "jest-resolve": "^27.4.2",
     "jest-watch-typeahead": "^1.0.0",
+    "jquery": "^3.6.1",
     "mini-css-extract-plugin": "^2.4.5",
     "mysql": "^2.18.1",
     "nodemon": "^2.0.20",

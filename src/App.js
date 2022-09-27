@@ -4,7 +4,7 @@ import Mainpage from './pages/mainpage';
 
 const App = () => {
   return (
-    <div>
+    <div className="outer">
       <Routes>
         <Route path="/INMATE/" element={<Mainpage />} />
         <Route path="/INMATE/maplist" element={<MapListPage />} />

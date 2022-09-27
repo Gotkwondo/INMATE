@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+
+//  Phone & Tablet
+@media(max-width: 1023px){
+  .inner_wrapper{
+    // font-family: 'Noto Sans KR', sans-serif;
+    // width: 100%;
+    height: 100vh;
+    overflow-y: auto;
+    // display: flex;
+    // justify-content: center;
+    // padding: 15px 0px 25px 0px;
+
+    .inner{
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 50px;
+    }
+    
+    .y{
+      background-color: #757569;
+    }
+    .b{
+      background-color: #b6d8f2;
+    }
+    .p{
+      background-color: #f4cfdf;
+    }
+  }
+  /* 화면에서 스크롤바 안보이게 */
+  .inner_wrapper::-webkit-scrollbar {
+  display: none;
+  }
+}
+
+@media(min-width: 1024px){
+  .inner_wrapper{
+    // font-family: 'Noto Sans KR', sans-serif;
+    height: 100%;
+    overflow-y: auto;
+    // width: 100%;
+    // margin-bottom: 80px;
+
+    .inner{
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 100px;
+    }
+    
+    .y{
+      background-color: #757569;
+    }
+    .b{
+      background-color: #b6d8f2;
+    }
+    .p{
+      background-color: #f4cfdf;
+    }
+  }
+  /* 화면에서 스크롤바 안보이게 */
+  .inner_wrapper::-webkit-scrollbar {
+  display: none;
+  }
+}

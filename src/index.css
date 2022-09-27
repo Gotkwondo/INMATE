@@ -7,17 +7,17 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-y: auto;
 }
-
+/* 화면에서 스크롤바 안보이게 */
+body::-webkit-scrollbar {
+  display: none;
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-.outer{
+/* .outer{
   height: 100vh;
   overflow-y: auto;
-}
-/* 화면에서 스크롤바 안보이게 */
-.outer::-webkit-scrollbar {
-  display: none;
-}
+} */

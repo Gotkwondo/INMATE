@@ -8,7 +8,7 @@ const Main = () => {
     <div className="main_contents">
       <div className="main_contents_list">
         <MainContentsListElement url="/INMATE/maplist" img={mapStaticImg} text="인천 맛집 지도" gif={mapGif}/>
-        <MainContentsListElement url="/INMATE/webinfo" img={testImage} text="웹의 정보" gif={mapGif }/>
+        <MainContentsListElement url="/INMATE/info" img={testImage} text="웹의 정보" gif={mapGif }/>
         <MainContentsListElement url="/INMATE/dev" img={testImage} text="개발일지" gif={ mapGif}/>
       </div>
     </div>

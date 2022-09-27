@@ -1,6 +1,7 @@
 const express = require('express');
 const mysql = require('mysql');
 const cors = require('cors');
+const path = require('path')
 const app = express();
 const port = 3307;
 
@@ -25,6 +26,11 @@ app.get("/restaurant_list", (req, res) => {
     res.send(result);
   })
 });
+app.use(express.static(path.join(__dirname, '../build')));
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../build/index.html'))
+                                    //  이쪽에 가져올 파일을 적어둔다
+})
 app.listen(port, () => {
   console.log(`running on port ${port}`);
 });

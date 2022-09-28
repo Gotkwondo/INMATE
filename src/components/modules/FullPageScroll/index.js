@@ -15,7 +15,6 @@ const FullPageScroll = () => {
         //  현재 1페이지
         if (scrollTop >= 0 && scrollTop < pageHeight) {
           //  2페이지로 이동
-          console.log("현재 1페이지, down");
           wrapperRef.current.scrollTo({
             top: pageHeight,
             left: 0,
@@ -25,7 +24,6 @@ const FullPageScroll = () => {
         //  현재 2페이지
         else if (scrollTop >= pageHeight && scrollTop < pageHeight * 2) {
           //  3페이지로 이동
-          console.log("현재 2페이지, down");
           wrapperRef.current.scrollTo({
             top: pageHeight * 2,
             left: 0,
@@ -35,7 +33,6 @@ const FullPageScroll = () => {
           //  현재 3페이지
         else {
           //  3페이지로 이동
-          console.log("현재 3페이지, down");
           wrapperRef.current.scrollTo({
             top: pageHeight * 2,
             left: 0,
@@ -48,7 +45,6 @@ const FullPageScroll = () => {
         //  현재 1페이지
         if (scrollTop >= 0 && scrollTop < pageHeight) {
           //  1페이지로 이동
-          console.log("현재 1페이지, up");
           wrapperRef.current.scrollTo({
             top: 0,
             left: 0,
@@ -58,7 +54,6 @@ const FullPageScroll = () => {
         //  현재 2페이지
         else if (scrollTop >= pageHeight && scrollTop < pageHeight * 2) {
           //  1페이지로 이동
-          console.log("현재 2페이지, up");
           wrapperRef.current.scrollTo({
             top: 0,
             left: 0,
@@ -68,7 +63,6 @@ const FullPageScroll = () => {
           //  현재 3페이지
         else {
           //  2페이지로 이동
-          console.log("현재 3페이지, up");
           wrapperRef.current.scrollTo({
             top: pageHeight,
             left: 0,

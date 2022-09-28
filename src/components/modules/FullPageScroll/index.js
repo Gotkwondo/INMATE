@@ -1,7 +1,13 @@
-// import './fullPageScroll.scss';
-import { useEffect, useRef } from 'react';
+import './fullPageScroll.scss';
+import { useEffect, useRef, useState } from 'react';
+import Info1 from '../../Infos/Info1';
+import Info2 from '../../Infos/Info2';
+import Info3 from '../../Infos/Info3';
 
 const FullPageScroll = () => {
+  //  마우스 스크롤 이벤트 발생 후 탑 위치를 상태 관리
+  const [scrollOffset, setScrollOffset] = useState(0);
+
   const wrapperRef = useRef();
   useEffect(() => {
     const wheelHandler = (e) => {
@@ -10,6 +16,7 @@ const FullPageScroll = () => {
       const { deltaY } = e; //  wheel 이벤트의 방향이 아래이면 양수, 위면 음수가 나옴
       const { scrollTop } = wrapperRef.current; //  스크롤 위쪽 끝부분의 위치
       const pageHeight = window.innerHeight;  //  화면의 세로 길이로써 100vh와 같음
+      
       if (deltaY > 0) {
         //  스크롤 내릴 때
         //  현재 1페이지
@@ -20,6 +27,7 @@ const FullPageScroll = () => {
             left: 0,
             behavior: "smooth",
           });
+          setScrollOffset(pageHeight);
         }
         //  현재 2페이지
         else if (scrollTop >= pageHeight && scrollTop < pageHeight * 2) {
@@ -29,8 +37,9 @@ const FullPageScroll = () => {
             left: 0,
             behavior: "smooth",
           });
+          setScrollOffset(pageHeight * 2);
         }
-          //  현재 3페이지
+        //  현재 3페이지
         else {
           //  3페이지로 이동
           wrapperRef.current.scrollTo({
@@ -59,8 +68,9 @@ const FullPageScroll = () => {
             left: 0,
             behavior: "smooth",
           });
+          setScrollOffset(0);
         }
-          //  현재 3페이지
+        //  현재 3페이지
         else {
           //  2페이지로 이동
           wrapperRef.current.scrollTo({
@@ -78,13 +88,14 @@ const FullPageScroll = () => {
       wrapperRefCurrent.removeEventListener("wheel", wheelHandler);
     };
   }, []);
+  console.log(scrollOffset);
   return (
-    <div ref={wrapperRef} className="inner_wrapper">
-      <div className="inner y">1</div>
-      <div className="inner b">2</div>
-      <div className="inner p">3</div>
+    <div ref={wrapperRef} className="inner_wrapper bg-bl">
+        <Info1 />
+        <Info2 />
+        <Info3 />
     </div>
-  )
-}
+  );
+};
 
 export default FullPageScroll;

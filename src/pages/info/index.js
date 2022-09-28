@@ -8,7 +8,7 @@ const InfoPage = () => {
       <Title />
       <FullPageScroll />
     </div>
-  )
-}
+  );
+};
 
 export default InfoPage;

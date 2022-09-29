@@ -1,13 +1,14 @@
 import './fullPageScroll.scss';
+import './scrollAnimation.scss';
 import { useEffect, useRef, useState } from 'react';
-import Info1 from '../../Infos/Info1';
-import Info2 from '../../Infos/Info2';
-import Info3 from '../../Infos/Info3';
+import Info1 from '../Infos/Info1';
+import Info2 from '../Infos/Info2';
+import Info3 from '../Infos/Info3';
 
 const FullPageScroll = () => {
   //  마우스 스크롤 이벤트 발생 후 탑 위치를 상태 관리
   const [scrollOffset, setScrollOffset] = useState({offset:0});
-
+    
   const wrapperRef = useRef();
   useEffect(() => {
     const wheelHandler = (e) => {
@@ -87,6 +88,10 @@ const FullPageScroll = () => {
             left: 0,
             behavior: "smooth",
           });
+          setScrollOffset({
+            ...scrollOffset,
+            offset: pageHeight
+          });
         }
       }
     };
@@ -97,18 +102,20 @@ const FullPageScroll = () => {
       wrapperRefCurrent.removeEventListener("wheel", wheelHandler);
     };
   }, []);
-  console.log(scrollOffset.offset);
-  console.log(`inner element1` + `${(scrollOffset.offset === 0 ? " actived" : "")}`)
+  // console.log(scrollOffset.offset);
+  // console.log(`inner element1` + `${(scrollOffset.offset === 0 ? " actived" : "")}`)
   return (
     <div ref={wrapperRef} className="inner_wrapper bg-bl">
-      <div className={`inner element1` + `${(scrollOffset.offset === 0 ? " actived" : "")}`}>
-        <Info1 act={0} />
+      {/* 애니메이션은 className을 추가하는 방향으로 적용했고
+      이는 window.innerHeight를 측정해서 삼항연산자로 선언해주엇다 */}
+      <div className="inner">
+        <Info1 act={(scrollOffset.offset === 0 ? 1 : 0)}/>
       </div>
-      <div className={`inner element2` + `${(scrollOffset.offset === window.innerHeight ? " actived" : "")}`}>
-        <Info2 />
+      <div className="inner">
+        <Info2 act={(scrollOffset.offset === window.innerHeight ? 1 : 0)}/>
       </div>
-      <div className={`inner element3` + `${(scrollOffset.offset === window.innerHeight * 2 ? " actived" : "")}`}>
-        <Info3 />
+      <div className="inner">
+        <Info3 act={(scrollOffset.offset === window.innerHeight * 2 ? 1 : 0)}/>
       </div>
       
       

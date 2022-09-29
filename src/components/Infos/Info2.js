@@ -1,8 +1,8 @@
 import './info.scss';
 
-const Info2 = () => {
+const Info2 = ({ act }) => {
   return (
-    <div className="contentsBox">
+    <div className={`contentsBox sa scaleUp ${act === 1 ? "show" : ""}`} >
       <div>2</div>
     </div>
   )

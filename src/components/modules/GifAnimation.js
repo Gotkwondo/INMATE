@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import $ from 'jquery';
 import { useEffect } from 'react';
 
-const MainContentsListElement = ({ url, img, text, gif }) => {
+const GifAnimation = ({ url, img, text, gif }) => {
   useEffect(() => {
     //  참고 출처 : https://marshall-ku.tistory.com/200
     //  hover 참고 명세서 : https://api.jquery.com/hover/
@@ -31,4 +31,4 @@ const MainContentsListElement = ({ url, img, text, gif }) => {
   );
 };
 
-export default MainContentsListElement;
+export default GifAnimation;

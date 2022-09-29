@@ -8,7 +8,7 @@
     color: #f4cfdf;
   }
   .inner{
-    height: 200px;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -21,15 +21,16 @@
 
 @media(min-width: 1024px){
   .bg-bl{
-    background-color: #000d0e;
+    background-color: #000000;
     color: #f4cfdf;
   }
   .inner{
-    height: 100vh;
-    // display: flex;
+    height: 100%;
+    display: flex;
     justify-content: center;
     align-items: center;
     font-size: 50px;
+    
   }
   /* 화면에서 스크롤바 안보이게 */
   .inner_wrapper::-webkit-scrollbar {

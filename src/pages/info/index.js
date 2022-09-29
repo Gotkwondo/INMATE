@@ -1,4 +1,4 @@
-import FullPageScroll from '../../components/modules/FullPageScroll';
+import FullPageScroll from '../../components/FullPageScroll';
 import Title from '../../components/Title'
 import './infoPage.scss';
 

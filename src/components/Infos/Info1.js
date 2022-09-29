@@ -2,8 +2,8 @@ import './info.scss';
 
 const Info1 = () => {
   return (
-    <div className="inner element1">
-      <div className="contentsBox">1</div>
+    <div className="contentsBox">
+      <div>1</div>
     </div>
   )
 }

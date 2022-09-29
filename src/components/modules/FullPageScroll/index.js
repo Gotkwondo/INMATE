@@ -6,7 +6,7 @@ import Info3 from '../../Infos/Info3';
 
 const FullPageScroll = () => {
   //  마우스 스크롤 이벤트 발생 후 탑 위치를 상태 관리
-  const [scrollOffset, setScrollOffset] = useState(0);
+  const [scrollOffset, setScrollOffset] = useState({offset:0});
 
   const wrapperRef = useRef();
   useEffect(() => {
@@ -27,7 +27,10 @@ const FullPageScroll = () => {
             left: 0,
             behavior: "smooth",
           });
-          setScrollOffset(pageHeight);
+          setScrollOffset({
+            ...scrollOffset,
+            offset: pageHeight
+          });
         }
         //  현재 2페이지
         else if (scrollTop >= pageHeight && scrollTop < pageHeight * 2) {
@@ -37,7 +40,10 @@ const FullPageScroll = () => {
             left: 0,
             behavior: "smooth",
           });
-          setScrollOffset(pageHeight * 2);
+          setScrollOffset({
+            ...scrollOffset,
+            offset: pageHeight * 2
+          });
         }
         //  현재 3페이지
         else {
@@ -68,7 +74,10 @@ const FullPageScroll = () => {
             left: 0,
             behavior: "smooth",
           });
-          setScrollOffset(0);
+          setScrollOffset({
+            ...scrollOffset,
+            offset: 0
+          });
         }
         //  현재 3페이지
         else {
@@ -88,12 +97,22 @@ const FullPageScroll = () => {
       wrapperRefCurrent.removeEventListener("wheel", wheelHandler);
     };
   }, []);
-  console.log(scrollOffset);
+  console.log(scrollOffset.offset);
+  console.log(`inner element1` + `${(scrollOffset.offset === 0 ? " actived" : "")}`)
   return (
     <div ref={wrapperRef} className="inner_wrapper bg-bl">
-        <Info1 />
+      <div className={`inner element1` + `${(scrollOffset.offset === 0 ? " actived" : "")}`}>
+        <Info1 act={0} />
+      </div>
+      <div className={`inner element2` + `${(scrollOffset.offset === window.innerHeight ? " actived" : "")}`}>
         <Info2 />
+      </div>
+      <div className={`inner element3` + `${(scrollOffset.offset === window.innerHeight * 2 ? " actived" : "")}`}>
         <Info3 />
+      </div>
+      
+      
+      
     </div>
   );
 };

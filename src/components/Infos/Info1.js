@@ -14,8 +14,8 @@ const Info1 = ({ act }) => {
     }
   }, trigger);
   return (
-    <div className={`contentsBox sa down ${trigger.num === 1 ? "show" : ""}`} >
-      <div className="content">
+    <div className={`contentsBox sa anime_up ${trigger.num === 1 ? "show" : ""}`} >
+      <div className="content intro">
         <div className="sub_text">
           안녕하세요
         </div>

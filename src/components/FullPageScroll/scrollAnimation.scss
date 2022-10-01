@@ -5,35 +5,35 @@
       }
 
       /* 아래에서 위로 페이드 인 */
-      .up {
+      .anime_up {
         transform: translate(0, 200px);
       }
       /* 위에서 아래로 페이드 인 */
-      .down {
+      .anime_down {
         transform: translate(0, -200px);
       }
       /* 왼쪽에서 오른쪽으로 페이드 인 */
-      .right {
+      .anime_right {
         transform: translate(-200px, 0);
       }
       /* 오른쪽에서 왼쪽으로 페이드 인 */
-      .left {
+      .anime_left {
         transform: translate(200px, 0);
       }
       /* 왼쪽으로 회전하면서 페이드 인 */
-      .rotateL {
+      .anime_rotateL {
         transform: rotate(180deg);
       }
       /* 오른쪽으로 회전하면서 페이드 인 */
-      .rotateR {
+      .anime_rotateR {
         transform: rotate(-180deg);
       }
       /* 작아진 상태에서 커지면서 페이드 인 */
-      .scaleUp {
+      .anime_scaleUp {
         transform: scale(.5);
       }
       /* 커진 상태에서 작아지면서 페이드 인 */
-      .scaleDown {
+      .anime_scaleDown {
         transform: scale(1.5);
       }
 

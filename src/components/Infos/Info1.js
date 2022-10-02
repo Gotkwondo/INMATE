@@ -23,6 +23,8 @@ const Info1 = ({ act }) => {
           인천의 맛집을 소개한다
         </div>
         <div className="main_text">
+          만나서 반갑습니다
+          <br />
           INMATE 입니다
         </div>
       </div>

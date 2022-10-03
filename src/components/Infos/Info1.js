@@ -25,7 +25,7 @@ const Info1 = ({ act }) => {
         <div className="main_text">
           만나서 반갑습니다
           <br />
-          INMATE 입니다
+          INMATE
         </div>
       </div>
     </div>

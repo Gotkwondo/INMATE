@@ -1,3 +1,5 @@
+@import '../../module/utils.scss';
+
 @function makelongshadow($color) {
   $val: 0px 0px $color;
   @for $i from 1 through 100 {
@@ -6,47 +8,67 @@
   @return $val;
 }
 
+// 모듈화 하자... .content explanation{}이런 식으로...
 .contentsBox{
   width: 90%;
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  .main_contents_list_element{
-  height: 100%;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  .link_wrapper{
-    margin: 20px 0px;
-    p{
-      margin: 10px 0px;
-    }
-    a{
-      font-size: 30px;
-      text-decoration: none;
-      color: blanchedalmond;
-    }
-  }
-  .img_wrapper{
-    width: 100%;
+  .content{
     display: flex;
+    width: 90%;
+    height: 80%;
     justify-content: center;
-    img{
-      width: 85%;
+    .explanation{
+      height: 5%;
+      text-align: center;
+      font-size: 20px;
+      font-weight: bolder;
+    }
+    .main_contents_list_element{
+      height: 80%;
+      width: 90%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      .link_wrapper{
+        height: 25%;
+        margin: 20px 0px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        p{
+          margin: 10px 0px;
+          width: 100%;
+        }
+        a{
+          font-size: 20px;
+          font-weight: bold;
+          text-decoration: none;
+          color: rgb(34, 255, 225);
+        }
+      }
+      .img_wrapper{
+        height: 70%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        img{
+          width: 85%;
+        }
+      }
     }
   }
-}
 }
 
-.content{
-  display: flex;
-  width: 100%;
-  height: 100%;
-  align-items: center;
-  justify-content: center;
+.background{
+  background-color: $content-background;
+  border-radius: 15px;
+  margin-top: 76px;
+  box-shadow: -5px -5px 30px 5px rgb(255, 98, 98), 5px 5px 30px 5px rgb(150, 0, 209);
 }
 .intro{
   flex-direction: column;
@@ -55,15 +77,20 @@
 
 .sub_text{
   font-size: 35px;
-  text-shadow: makelongshadow(#323233);
+  text-shadow: makelongshadow(#2c1821);
   // box-shadow: 15px 5px 10px red;
   // box-shadow: 15px 5px 20px red;
 }
 .main_text{
   font-size: 70px;
-  text-shadow: makelongshadow(#444444);
+  text-shadow: makelongshadow(#4e2939);
   // box-shadow: 5px 5px 10px rgb(255, 255, 255);
   // background-color:rgb(255, 255, 255);
   // border-radius: 15px;
 }
 
+.column{
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}

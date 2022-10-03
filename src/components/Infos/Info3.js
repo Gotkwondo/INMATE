@@ -4,7 +4,9 @@ const Info3 = ({act}) => {
   return (
     <div className={`contentsBox sa anime_scaleUp ${act === 1 ? "show" : ""}`} >
       <div className="content background column">
-        <h6 className="title">사용한 기술/라이브러리</h6>
+        <div className="content_title">
+          <p>사용한 기술/라이브러리</p>            
+          </div>
         <div className="list_area">
           <div className="technic_list">
             여기에는 사용한 중요 라이브러리/기술 리스트

@@ -94,3 +94,33 @@
   align-items: center;
   justify-content: center;
 }
+
+.content_title{
+  width: 100%;
+  height: 10%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  p{
+    margin: 0px;
+    height: 100%;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+  }
+}
+.list_area{
+  width: 100%;
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  align-content: flex-start;
+  .technic_list{
+    width: 50%;
+    height: 100%;
+  }
+}
+.link_area{
+  width: 100%;
+  height: 10%;
+}

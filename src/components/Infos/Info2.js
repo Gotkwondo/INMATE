@@ -2,6 +2,7 @@ import './info.scss';
 import mapStaticImg from '../../static/img/mapStaticImg.gif';
 import mapGif from '../../static/gif/mapGif.gif';
 import GifAnimation from '../modules/GifAnimation';
+import InfoContent from '../../module/InfoContent';
 
 const Info2 = ({ act }) => {
   return (

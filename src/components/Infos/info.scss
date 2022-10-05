@@ -8,6 +8,23 @@
   @return $val;
 }
 
+//  Phone & Tablet
+@media(max-width: 1023px){
+  .contentsBox{
+    width: 90%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .content{
+      display: flex;
+      width: 90%;
+      height: 80%;
+      justify-content: center;
+    }
+  }
+}
+
 // 모듈화 하자... .content explanation{}이런 식으로...
 .contentsBox{
   width: 90%;
@@ -49,15 +66,6 @@
           font-weight: bold;
           text-decoration: none;
           color: rgb(34, 255, 225);
-        }
-      }
-      .img_wrapper{
-        height: 70%;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        img{
-          width: 85%;
         }
       }
     }
@@ -121,6 +129,13 @@
   }
 }
 
+.border_top{
+  border-top: 2px solid rgb(224, 171, 255);
+}
+.border_right{
+  border-right: 2px solid rgb(224, 171, 255);
+}
+
 .flex_area_row{
   display: flex;
   justify-content: center;
@@ -159,10 +174,9 @@
 
 .icon{
   margin: 10px 0px;
-  // width: 100%;
   img{
     height: 50px;
-    width: 50%;
+    width: 100px;
   }
 }
 

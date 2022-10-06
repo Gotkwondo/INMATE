@@ -8,10 +8,11 @@ const Info2 = ({ act }) => {
   return (
     <div className={`contentsBox sa anime_scaleUp ${act === 1 ? "show" : ""}`} >
       <div className="content background column">
-        <div className="explanation">"개발자가 추천하는</div>
-        <div className="explanation">인천의 맛집을 소개한다"</div>
-        
-        <GifAnimation url="/INMATE/maplist" img={mapStaticImg} text="INMATE" gif={mapGif}/>
+        <p className="sub_text height_per10">"개발자가 추천하는</p>
+        <p className="sub_text height_per10">인천의 맛집을 소개한다"</p>
+        <div className="info_gif width_per100 height_per80">
+          <GifAnimation url="/INMATE/maplist" img={mapStaticImg} text="INMATE" gif={mapGif} />
+        </div>
       </div>
     </div>
   )

@@ -21,12 +21,59 @@
       width: 90%;
       height: 80%;
       justify-content: center;
+      .a_deco_none{
+          font-size: 15px;
+        }
+      .sub_text{
+        font-size: 20px;
+      }
+      .main_text{
+        font-size: 27px;
+      }
+      .link_wrapper{
+        height: 25%;
+        margin: 20px 0px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        a{
+          font-size: 10px;
+          font-weight: bold;
+          text-decoration: none;
+          color: rgb(34, 255, 225);
+        }
+      }
+      .img_wrapper{
+        
+        img{
+          width: 100%;
+          height: 100%;
+        }
+      }
+      .icon{
+        img{
+          width: 70%;
+          height: 100%;
+        }
+        .info_text{
+          font-size: 15px;
+        }
+      }
+      .link_content{
+        .icon{
+          img{
+            width: 30px;
+            height: 50px;
+          }
+        }
+      }
     }
   }
 }
 
-// 모듈화 하자... .content explanation{}이런 식으로...
-.contentsBox{
+@media(min-width: 1023px){
+  .contentsBox{
   width: 90%;
   height: 100%;
   display: flex;
@@ -37,30 +84,19 @@
     width: 90%;
     height: 80%;
     justify-content: center;
-    .explanation{
-      height: 5%;
-      text-align: center;
-      font-size: 20px;
-      font-weight: bolder;
+    .info_gif{
+      .img_wrapper{
+        height: 50%;
+      }
     }
-    .main_contents_list_element{
-      height: 80%;
-      width: 90%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      .link_wrapper{
+    
+    .link_wrapper{
         height: 25%;
         margin: 20px 0px;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        p{
-          margin: 10px 0px;
-          width: 100%;
-        }
         a{
           font-size: 20px;
           font-weight: bold;
@@ -89,13 +125,6 @@
   }
 }
 
-.sub_text{
-  font-size: 30px;
-  margin: 10px 0px;
-}
-.main_text{
-  font-size: 50px;
-}
 
 .column{
   flex-direction: column;
@@ -138,7 +167,7 @@
 
 .flex_area_row{
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   width: 100%;
 }
@@ -146,12 +175,17 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center
 }
+// height
 .height_per10{
   height: 10%;
 }
 .height_per15{
   height: 15%;
+}
+.height_per50{
+  height: 50%;
 }
 .height_per80{
   height: 80%;
@@ -159,11 +193,16 @@
 .height_per100{
   height: 100%;
 }
+//  width
+.width_per20{
+  width: 30%;
+}
 .width_per45{
   width: 45%;
-  margin: 0px 10px;
-  font-size: 20px;
-  font-weight: bold;
+  padding: 0px 10px;
+}
+.width_per60{
+  width: 60%;
 }
 .width_per90{
   width: 90%;
@@ -174,20 +213,32 @@
 
 .icon{
   margin: 10px 0px;
+  font-size: 10px;
   img{
     height: 50px;
     width: 100px;
   }
 }
 
+//  text 관련
+.text_center{
+  text-align: center;
+}
+.sub_text{
+  font-size: 30px;
+  margin: 10px 0px;
+}
+.main_text{
+  font-size: 50px;
+}
+.info_text{
+  font-size: 20px;
+  font-weight: normal;
+  text-align: center;
+}
 .a_deco_none{
   font-size: 20px;
   font-weight: bold;
   text-decoration: none;
   color: rgb(185, 110, 247);
-}
-
-//  title 관련
-.text_center{
-  text-align: center;
 }

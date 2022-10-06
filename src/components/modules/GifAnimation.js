@@ -17,14 +17,14 @@ const GifAnimation = ({ url, img, text, gif }) => {
     )
   });
   return (
-    <div className="main_contents_list_element">
-      <div className="link_wrapper">
+    <div className="main_contents_list_element height_per100">
+      <div className="link_wrapper height_per10">
         <p>{text}</p>
         <Link to={url} className="link">바로가기</Link>
       </div>
       {/* 아래의 Image는 나중에 애니메이션 효과로 gif를 띄우는 컴포넌트로 바꿀 예정 */}
       {/* <Image url={url} src={imgSrc} /> */}
-      <div className="img_wrapper">
+      <div className="flex_area_row img_wrapper">
         <img src={img} alt="" data-animated={gif} data-static={img} className="hov-anim" />
       </div>
     </div>

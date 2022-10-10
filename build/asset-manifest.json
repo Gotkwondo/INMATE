@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/INMATE/static/css/main.9c9432a1.css",
+    "main.js": "/INMATE/static/js/main.ee9a4c1a.js",
+    "static/js/787.142da1d4.chunk.js": "/INMATE/static/js/787.142da1d4.chunk.js",
+    "static/media/mapGif.gif": "/INMATE/static/media/mapGif.f3b120e3d03b9a94d0c0.gif",
+    "static/media/infoGif.gif": "/INMATE/static/media/infoGif.71885eb96adb202471d7.gif",
+    "static/media/react.png": "/INMATE/static/media/react.81ed438b18e24116794d.png",
+    "static/media/sass.png": "/INMATE/static/media/sass.aa16d6441e3e941f60c1.png",
+    "static/media/mapStaticImg.gif": "/INMATE/static/media/mapStaticImg.8bf2478d704fcda7179d.gif",
+    "static/media/jquery.png": "/INMATE/static/media/jquery.0998ab8e1b6affca443d.png",
+    "static/media/mariaDB.png": "/INMATE/static/media/mariaDB.e59238dcacb2a5525c31.png",
+    "static/media/infoStatic.jpg": "/INMATE/static/media/infoStatic.cae65fc4c21d7df1b057.jpg",
+    "static/media/kisspng-github-computer-software-logo-source-code-github-logo-png-5cc8c808c04229.png": "/INMATE/static/media/kisspng-github-computer-software-logo-source-code-github-logo-png-5cc8c808c04229.7905269215566622807875.1ff6d9646165b7f34af9.png",
+    "static/media/express.svg": "/INMATE/static/media/express.75fff9be2f3b289ba7be1f43a08f7a4c.svg",
+    "static/media/note.svg": "/INMATE/static/media/note.642306dbbac19492314492f6c0c5b5dd.svg",
+    "index.html": "/INMATE/index.html",
+    "static/media/tistory.svg": "/INMATE/static/media/tistory.89779f2b3fe49ebdfd4d3b0deab39eee.svg",
+    "main.9c9432a1.css.map": "/INMATE/static/css/main.9c9432a1.css.map",
+    "main.ee9a4c1a.js.map": "/INMATE/static/js/main.ee9a4c1a.js.map",
+    "787.142da1d4.chunk.js.map": "/INMATE/static/js/787.142da1d4.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9c9432a1.css",
+    "static/js/main.ee9a4c1a.js"
+  ]
+}

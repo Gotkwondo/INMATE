@@ -54,17 +54,11 @@ const Info3 = ({ act }) => {
           <div className="link_content width_per45 height_per100">
             <div className="flex_area_row width_per100 height_per100">
               <InfoList img={git} text={"Github"} url={"https://github.com/Gotkwondo/INMATE"} />
-              {/* <div className="width_per45">
-                <a href="https://github.com/Gotkwondo/INMATE" rel="noreferrer" target="_blank" className="a_deco_none">바로가기</a>
-              </div> */}
             </div>
           </div>
           <div className="link_content width_per45 height_per100">
             <div className="flex_area_row width_per100 height_per100">
               <InfoList img={tistory} text={"티스토리"} url={"https://58cjdcns99.tistory.com/category/INMATE%20%EC%9D%B8%EC%B2%9C%20%EB%A7%9B%EC%A7%91%20%EC%86%8C%EA%B0%9C"} />
-              {/* <div className="width_per45 height_per100">
-                <a href="https://58cjdcns99.tistory.com/category/INMATE%20%EC%9D%B8%EC%B2%9C%20%EB%A7%9B%EC%A7%91%20%EC%86%8C%EA%B0%9C" rel="noreferrer" target="_blank" className="a_deco_none">바로가기</a>
-              </div> */}
             </div>
           </div>
         </div>

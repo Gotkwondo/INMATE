@@ -102,8 +102,6 @@ const FullPageScroll = () => {
       wrapperRefCurrent.removeEventListener("wheel", wheelHandler);
     };
   }, []);
-  // console.log(scrollOffset.offset);
-  // console.log(`inner element1` + `${(scrollOffset.offset === 0 ? " actived" : "")}`)
   return (
     <div ref={wrapperRef} className="inner_wrapper bg-bl">
       {/* 애니메이션은 className을 추가하는 방향으로 적용했고

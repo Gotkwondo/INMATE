@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+@import '../module/utils.scss';
 
 //  Phone & Tablet
 @media(max-width: 1023px){
@@ -29,8 +30,15 @@
       height: 100%;
       display: flex;
       align-items: center;
-      justify-content: center;
+      justify-content: space-between;
       display: flex;
     }
   }
+}
+
+.map_background{
+  background-color: $content-background;
+  border-radius: 15px;
+  margin-top: 30px;
+  box-shadow: -5px -5px 30px 5px rgb(207, 75, 75), 5px 5px 15px 5px rgb(203, 83, 250);
 }

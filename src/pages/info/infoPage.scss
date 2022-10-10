@@ -3,14 +3,8 @@
 //  Phone & Tablet
 @media(max-width: 1023px){
   .inner_wrapper{
-    // font-family: 'Noto Sans KR', sans-serif;
-    // width: 100%;
     height: 100vh;
     overflow-y: auto;
-    // display: flex;
-    // justify-content: center;
-    // padding: 15px 0px 25px 0px;
-    
   }
   /* 화면에서 스크롤바 안보이게 */
   .inner_wrapper::-webkit-scrollbar {
@@ -20,14 +14,8 @@
 
 @media(min-width: 1024px){
   .inner_wrapper{
-    // font-family: 'Noto Sans KR', sans-serif;
     height: 100vh;
     overflow-y: auto;
-    // width: 100%;
-    // margin-bottom: 80px;
-    // border-bottom: 80px;
-    // margin-top: 80px;
-    
   }
   /* 화면에서 스크롤바 안보이게 */
   .inner_wrapper::-webkit-scrollbar {

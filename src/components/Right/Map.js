@@ -1,13 +1,10 @@
 /* global kakao */
 import React, { useEffect, useRef, useState } from 'react';
 
-// const { kakao } = window;
-
 const Map = ({ list, centerLoca }) => {
   //
 
   const [kakaoMap, setKakaoMap] = useState(null);
-  // const [center, setCenter] = useState([...centerLoca.latlng]);
 
   const container = useRef();
   
@@ -84,10 +81,8 @@ const Map = ({ list, centerLoca }) => {
       });
     });
 
-    // const selectedLoca = centerLoca.latlng;
     const bounds = new kakao.maps.LatLngBounds();
     if (centerLoca.lat !== 0 && centerLoca.lat !== 0) {
-      // console.log(selectedLoca);
       bounds.extend(new kakao.maps.LatLng(centerLoca.lat, centerLoca.lng));
       kakaoMap.setBounds(bounds);
     }

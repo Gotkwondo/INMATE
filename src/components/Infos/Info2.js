@@ -2,7 +2,6 @@ import './info.scss';
 import mapStaticImg from '../../static/img/mapStaticImg.gif';
 import mapGif from '../../static/gif/mapGif.gif';
 import GifAnimation from '../modules/GifAnimation';
-import InfoContent from '../../module/InfoContent';
 
 const Info2 = ({ act }) => {
   return (
@@ -11,7 +10,7 @@ const Info2 = ({ act }) => {
         <p className="sub_text height_per10">"개발자가 추천하는</p>
         <p className="sub_text height_per10">인천의 맛집을 소개한다"</p>
         <div className="info_gif width_per100 height_per80">
-          <GifAnimation url="/INMATE/maplist" img={mapStaticImg} text="INMATE" gif={mapGif} />
+          <GifAnimation url="/INMATE/maplist" img={mapStaticImg} text="INMATE" gif={mapGif} use={"info"} />
         </div>
       </div>
     </div>

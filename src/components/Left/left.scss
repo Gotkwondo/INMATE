@@ -4,10 +4,10 @@
 @media(max-width: 1023px){
   .left{
     background: rgb(255, 255, 255);
-    // border-top: 1px solid grey;
+    border-radius: 15px;
     .list{
-      // display: flex;
       padding-left: 0px;
+      border-radius: 15px;
       li{
         height: 130px;
         border-bottom: 1px solid rgb(165, 165, 165);
@@ -32,17 +32,16 @@
 }
 
 @media(min-width: 1024px){
-  //  left css
   .left{
     height: 80vh;
     flex-basis: 300px;
     background: rgb(255, 255, 255);
-    border: 2px solid grey;
+    border-radius: 15px;
     .left-innerWrapper{
       .list{
-        // display: flex;
         padding-left: 0px;
         list-style: none;
+        border-radius: 15px;
         li{
           height: 130px;
           border-bottom: 2px solid rgb(165, 165, 165);
@@ -65,8 +64,6 @@
     }
   }
 }
-
-//옮겨야 할 것
-// body{
-//   background: rgb(247, 246, 214);
-// }
+div::-webkit-scrollbar{
+  display: none;
+}

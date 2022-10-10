@@ -21,7 +21,7 @@ const DesktopMapContainer = ({
 
   return (
     <div className="middle-wrapping">
-      <div className="contents">
+      <div className="contents map_background">
         <Left list={list} selectLocationAsync={selectLocationAsync} />
         <Right list={list} centerLoca={centerLoca}/>
       </div>

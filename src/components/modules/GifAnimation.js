@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import $ from 'jquery';
 import { useEffect } from 'react';
 
-const GifAnimation = ({ url, img, text, gif }) => {
+const GifAnimation = ({ url, img, text, gif, use }) => {
   useEffect(() => {
     //  참고 출처 : https://marshall-ku.tistory.com/200
     //  hover 참고 명세서 : https://api.jquery.com/hover/
@@ -17,7 +17,7 @@ const GifAnimation = ({ url, img, text, gif }) => {
     )
   });
   return (
-    <div className="main_contents_list_element height_per100">
+    <div className={`main_contents_list_element height_per100 ${use}_background`}>
       <div className="link_wrapper height_per10">
         <p>{text}</p>
         <Link to={url} className="link">바로가기</Link>

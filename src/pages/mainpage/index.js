@@ -7,9 +7,7 @@ const Mainpage = () => {
     <div className="wrapper">
       <Title />
       <div className="main_wrapper">
-        {/* <div className="main_container"> */}
         <Main />
-        {/* </div> */}
       </div>
     </div>
     

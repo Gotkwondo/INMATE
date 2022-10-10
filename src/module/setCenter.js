@@ -7,7 +7,6 @@ const SELECT_LOCATION_FAILURE = 'setCenter/SELECT_LOCATION_FAILURE';
 export const selectLocationAsync = (lat, lng) => async dispatch => {
   dispatch({ type: SELECT_LOCATION }); //  요청을 시작한 것을 알림
   try {
-    // const response = await api.getPost(id);
     dispatch({
       type: SELECT_LOCATION_SECCESS,
       payload: {
@@ -28,7 +27,6 @@ export const selectLocationAsync = (lat, lng) => async dispatch => {
 
 const initialState = {
   centerLoca: {
-    // selectID: 0,
     lat: 0,
     lng: 0
   }

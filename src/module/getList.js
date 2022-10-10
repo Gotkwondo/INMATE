@@ -4,7 +4,6 @@ import axios from 'axios';
 const initialState = {
   lists: [],
   centerLoca: {
-    // selectID: 0,
     latlng: 0
   }
 };

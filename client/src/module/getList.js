@@ -7,6 +7,6 @@ const initialState = {
     latlng: 0
   }
 };
-axios.get('http://localhost:3307/restaurant_list')
+axios.get('http://localhost:8080/maplist')
       .then(res => initialState.lists.push(...res.data))
       .catch()

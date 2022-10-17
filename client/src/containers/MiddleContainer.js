@@ -14,7 +14,7 @@ const DesktopMapContainer = ({
   const [list, setLists] = useState([]);
   
   useEffect(() => {
-    axios.get('http://localhost:3307/restaurant_list')
+    axios.get('http://localhost:8080/maplist')
       .then(res => setLists(res.data))
       .catch()
   }, []);

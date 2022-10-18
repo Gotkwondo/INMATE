@@ -6,6 +6,7 @@ import './middleContainer.scss';
 import { useState } from 'react';
 import axios from 'axios';
 import { useEffect } from 'react';
+import secret from '../private_setting.json';
 
 const DesktopMapContainer = ({
   centerLoca,
@@ -14,7 +15,7 @@ const DesktopMapContainer = ({
   const [list, setLists] = useState([]);
   
   useEffect(() => {
-    axios.get('http://localhost:8080/maplist')
+    axios.get(`http://${secret.host}:8080/maplist`)
       .then(res => setLists(res.data))
       .catch()
   }, []);

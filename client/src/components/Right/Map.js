@@ -89,7 +89,7 @@ const Map = ({ list, centerLoca }) => {
   }, [kakaoMap, list, centerLoca]);
   return (
     <>
-      <div id="map" ref={container}></div>
+      <div id="map"></div>
     </>
   );
 };

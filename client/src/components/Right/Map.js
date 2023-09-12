@@ -6,7 +6,7 @@ const Map = ({ list, centerLoca }) => {
 
   const [kakaoMap, setKakaoMap] = useState(null);
 
-  const container = useRef();
+  const container = document.getElementById("map");
   
   //지도 그리기
   useEffect(() => {

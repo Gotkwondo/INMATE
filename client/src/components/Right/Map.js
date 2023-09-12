@@ -12,7 +12,7 @@ const Map = ({ list, centerLoca }) => {
   useEffect(() => {
     const center = new kakao.maps.LatLng(37.50802, 127.062835);
     const options = {
-      center,
+      center: center,
       level: 3
     };
     const map = new kakao.maps.Map(container.current, options);
